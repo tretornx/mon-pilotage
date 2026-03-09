@@ -3,59 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pilotage personnel strict — Seb</title>
+  <title>Cap Simple — Guide quotidien anti-procrastination</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="shell">
     <section class="hero">
-      <div class="eyebrow">✅ Mode d’emploi strict</div>
-      <h1>Pilotage personnel carré : quoi faire chaque matin, chaque soir, chaque lundi</h1>
+      <div class="eyebrow">🧭 Application quotidienne guidée</div>
+      <h1>Cap Simple : quoi faire aujourd’hui, comment le choisir, et comment démarrer sans te bloquer</h1>
       <p>
-        Cette page n’est pas là pour t’inspirer. Elle est là pour te dire exactement quoi faire,
-        quoi ne pas faire, dans quel outil ranger chaque chose, et comment évaluer si tu avances vraiment.
+        Cette page n’est pas là pour te motiver. Elle est là pour réduire la friction, vider la surcharge,
+        forcer l’arbitrage, limiter les priorités et t’aider à produire un travail utile même imparfait.
+        Tu l’ouvres le matin, elle te dit comment choisir ta priorité du jour, quelle méthode appliquer,
+        et quelle première action visible lancer.
       </p>
       <div class="hero-grid">
-        <div class="quick-card">
-          <h3>La règle centrale</h3>
-          <p>Tu n’as pas le droit de laisser dans ta tête des montagnes floues comme “ranger mes mails” ou “m’organiser”.</p>
-          <div class="formula">Une tâche valide = verbe + objet précis + limite claire</div>
-          <div class="pill-row">
-            <span class="pill">Supprimer 100 newsletters</span>
-            <span class="pill">Fusionner 5 notes en double</span>
-            <span class="pill">Trier 50 captures d’écran</span>
-          </div>
-        </div>
-        <div class="quick-card">
-          <h3>Les 4 règles du système</h3>
+        <div class="card">
+          <h3>Les 4 piliers du guide stratégique</h3>
           <ul class="rule-list">
-            <li>1 seule vraie priorité par jour</li>
-            <li>3 priorités fortes max par semaine</li>
-            <li>5 grands axes actifs max</li>
-            <li>Le lundi on pilote, les autres jours on exécute</li>
+            <li>Faible friction : l’action doit coûter moins d’énergie que l’évitement</li>
+            <li>B-Work : ton niveau par défaut est “suffisamment bon”, pas “parfait”</li>
+            <li>Arbitrage impitoyable : 3 priorités hebdo maximum</li>
+            <li>Mesure du Gain : comparer au point de départ, jamais à l’idéal</li>
           </ul>
+          <div class="formula">État réel → priorité utile → méthode adaptée → première action visible → clôture du Gain</div>
+        </div>
+        <div class="card">
+          <h3>La règle centrale</h3>
+          <p>Tu ne choisis pas la tâche parfaite. Tu choisis la tâche la plus utile, faisable aujourd’hui, avec ton énergie réelle.</p>
+          <div class="pill-row">
+            <span class="pill">Règle des 2 minutes</span>
+            <span class="pill">B-Work</span>
+            <span class="pill">Règle 1-3-5</span>
+            <span class="pill">Backlog</span>
+            <span class="pill">Gain du jour</span>
+          </div>
         </div>
       </div>
       <div class="kpis">
-        <div class="kpi"><strong id="compteurCochees">0</strong><span>cases cochées</span></div>
-        <div class="kpi"><strong id="compteurTotal">0</strong><span>actions visibles</span></div>
-        <div class="kpi"><strong id="pourcentageProgression">0%</strong><span>progression</span></div>
-        <div class="kpi"><strong>10 min</strong><span>gestion journalière max</span></div>
+        <div class="kpi"><strong id="doneCount">0</strong><span>cases cochées</span></div>
+        <div class="kpi"><strong id="allCount">0</strong><span>actions visibles</span></div>
+        <div class="kpi"><strong id="progressPct">0%</strong><span>progression</span></div>
+        <div class="kpi"><strong id="sessionTarget">25 min</strong><span>durée conseillée</span></div>
       </div>
     </section>
 
     <div class="topbar">
       <div class="topbar-inner">
         <nav class="nav">
+          <a href="#aujourdhui">Aujourd’hui</a>
+          <a href="#coach">Blocage</a>
           <a href="#matin">Matin</a>
           <a href="#execution">Exécution</a>
           <a href="#soir">Soir</a>
-          <a href="#temps-libre">Temps Libre</a>
+          <a href="#temps-libre">Temps libre</a>
           <a href="#lundi">Lundi</a>
+          <a href="#guide7jours">7 jours</a>
         </nav>
         <div class="progress-side">
           <div class="progress-label">Avancement coché</div>
-          <div class="progress-bar"><div class="progress-fill" id="barreRemplissage"></div></div>
+          <div class="progress-bar">
+            <div id="progressFill" class="progress-fill"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -65,75 +74,346 @@
         <div class="sidebar-stack">
           <div>
             <h2>Procédure ultra courte</h2>
-            <p>Quand tu es perdu, tu ne réfléchis pas. Tu appliques ça.</p>
+            <p>Quand tu es perdu, tu n’improvises pas. Tu appliques l’ordre suivant.</p>
           </div>
+
           <div class="box">
-            <h3>Tous les matins</h3>
-            <div class="strict-list">
-              <div class="strict-line">1. Ouvrir Calendrier + Things 3 + Rappels</div>
-              <div class="strict-line">2. Voir le vrai temps disponible</div>
-              <div class="strict-line">3. Choisir 1 Highlight</div>
-              <div class="strict-line">4. Bloquer le créneau</div>
+            <h3>Chaque matin</h3>
+            <div class="stack">
+              <div class="chip">1. Ouvrir Calendrier + Things + Rappels</div>
+              <div class="chip">2. Regarder les 3 priorités de semaine</div>
+              <div class="chip">3. Choisir la priorité du jour</div>
+              <div class="chip">4. Réduire en action visible</div>
+              <div class="chip">5. Lancer la bonne méthode</div>
+            </div>
+          </div>
+
+          <div class="box">
+            <h3>Quand ça bloque</h3>
+            <div class="stack">
+              <div class="chip">Blocage = 2 minutes</div>
+              <div class="chip">Perfectionnisme = B-Work</div>
+              <div class="chip">Dispersion = 1-3-5</div>
+              <div class="chip">Fatigue = tâche énergie basse</div>
+              <div class="chip">Culpabilité = Gain</div>
+            </div>
+          </div>
+
+          <div class="callout red">
+            <div class="icon">⛔</div>
+            <div>
+              <strong>Interdiction</strong>
+              Pas de refonte du système. Pas de 12 priorités. Pas de tâche floue comme “m’organiser”. Pas d’attente du bon moment.
+            </div>
+          </div>
+
+          <div class="box">
+            <h3>Qualité autorisée</h3>
+            <div class="stack">
+              <div class="status-card stop"><strong>A-Work</strong><br><small>Rare. Réservé à une vraie livraison importante.</small></div>
+              <div class="status-card warn"><strong>B-Work</strong><br><small>Mode par défaut. Suffisamment bon, utile, visible.</small></div>
+              <div class="status-card good"><strong>C-Work</strong><br><small>Mode démarrage. Ridiculement simple pour casser l’inertie.</small></div>
             </div>
           </div>
         </div>
       </aside>
 
       <main class="content">
-        
+        <section class="section" id="aujourdhui">
+          <div class="section-head">
+            <div>
+              <h2>1. Que faire aujourd’hui ?</h2>
+              <p>Cette zone sert à trancher. Tu pars de tes 3 priorités de semaine. L’app t’aide à choisir celle du jour avec un score simple.</p>
+            </div>
+            <div class="badge">Décision du matin</div>
+          </div>
+
+          <div class="decision-grid">
+            <div class="box">
+              <h3>Mes 3 priorités de semaine</h3>
+              <div class="grid-3">
+                <div>
+                  <label><strong>Priorité 1</strong></label>
+                  <input data-text-id="priorite-1" placeholder="Exemple : relancer mon app web" />
+                </div>
+                <div>
+                  <label><strong>Priorité 2</strong></label>
+                  <input data-text-id="priorite-2" placeholder="Exemple : anglais 4 sessions" />
+                </div>
+                <div>
+                  <label><strong>Priorité 3</strong></label>
+                  <input data-text-id="priorite-3" placeholder="Exemple : nettoyer Notes Apple" />
+                </div>
+              </div>
+
+              <div class="callout blue top-gap">
+                <div class="icon">📌</div>
+                <div>
+                  <strong>Comment choisir la priorité du jour</strong>
+                  Tu prends celle qui coche le plus de cases : proche d’une échéance, forte importance, gros effet de levier, gros soulagement mental.
+                  Si plusieurs se valent, tu choisis celle qui débloque le plus ou allège le plus ta charge mentale.
+                </div>
+              </div>
+
+              <div class="grid-3 top-gap">
+                <div class="box">
+                  <h3>Priorité la plus urgente</h3>
+                  <select data-text-id="choix-urgence">
+                    <option value="priorite-1">Priorité 1</option>
+                    <option value="priorite-2">Priorité 2</option>
+                    <option value="priorite-3">Priorité 3</option>
+                    <option value="aucune">Aucune</option>
+                  </select>
+                </div>
+                <div class="box">
+                  <h3>Priorité la plus importante</h3>
+                  <select data-text-id="choix-importance">
+                    <option value="priorite-1">Priorité 1</option>
+                    <option value="priorite-2">Priorité 2</option>
+                    <option value="priorite-3">Priorité 3</option>
+                    <option value="aucune">Aucune</option>
+                  </select>
+                </div>
+                <div class="box">
+                  <h3>Priorité la plus soulageante</h3>
+                  <select data-text-id="choix-soulagement">
+                    <option value="priorite-1">Priorité 1</option>
+                    <option value="priorite-2">Priorité 2</option>
+                    <option value="priorite-3">Priorité 3</option>
+                    <option value="aucune">Aucune</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="box top-gap">
+                <h3>Priorité la plus bloquante si je l’ignore</h3>
+                <select data-text-id="choix-levier">
+                  <option value="priorite-1">Priorité 1</option>
+                  <option value="priorite-2">Priorité 2</option>
+                  <option value="priorite-3">Priorité 3</option>
+                  <option value="aucune">Aucune</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="box">
+              <h3>Résultat du tri du jour</h3>
+              <div class="priority-list" id="priorityResults"></div>
+              <div class="status-card good top-gap" id="selectedPriorityCard">
+                <strong>Priorité du jour</strong><br>
+                <small>Complète les critères à gauche pour que l’app te propose la priorité du jour.</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid-4 top-gap">
+            <div class="box">
+              <h3>Pourquoi elle passe en premier</h3>
+              <textarea data-text-id="raison-priorite" placeholder="Exemple : elle débloque l’app et enlève une grosse charge mentale"></textarea>
+            </div>
+            <div class="box">
+              <h3>Action visible de 25 min max</h3>
+              <textarea data-text-id="action-visible" placeholder="Exemple : corriger l’écran d’accueil sans peaufiner"></textarea>
+            </div>
+            <div class="box">
+              <h3>Version 2 minutes</h3>
+              <textarea data-text-id="action-2min" placeholder="Exemple : ouvrir le projet et écrire 3 sous-étapes"></textarea>
+            </div>
+            <div class="box">
+              <h3>Backlog / plus tard</h3>
+              <textarea data-text-id="backlog" placeholder="Tout ce qui ne rentre pas aujourd’hui va ici, sans culpabilité"></textarea>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="coach">
+          <div class="section-head">
+            <div>
+              <h2>2. Si je bloque, j’applique quoi ?</h2>
+              <p>Tu choisis ton état réel. L’app affiche la bonne méthode, la durée, le niveau de qualité et la première action à lancer.</p>
+            </div>
+            <div class="badge">Coach anti-blocage</div>
+          </div>
+
+          <div class="coach-grid">
+            <div class="box">
+              <h3>Mon état réel maintenant</h3>
+              <div class="trigger-grid" id="triggerGrid">
+                <button class="trigger-btn" data-trigger="demarrage">Je bloque au démarrage</button>
+                <button class="trigger-btn" data-trigger="perfection">Je veux que ce soit parfait</button>
+                <button class="trigger-btn" data-trigger="dispersion">Je veux tout faire</button>
+                <button class="trigger-btn" data-trigger="fatigue">Je suis fatigué</button>
+                <button class="trigger-btn" data-trigger="culpabilite">Je culpabilise</button>
+                <button class="trigger-btn" data-trigger="tempslibre">J’ai du temps libre flou</button>
+              </div>
+
+              <div class="box top-gap">
+                <h3>Niveau d’énergie du moment</h3>
+                <div class="energy-grid" id="energyGrid">
+                  <button class="energy-btn" data-energy="basse">Basse</button>
+                  <button class="energy-btn" data-energy="moyenne">Moyenne</button>
+                  <button class="energy-btn" data-energy="haute">Haute</button>
+                </div>
+              </div>
+
+              <div class="grid-2 top-gap">
+                <button class="primary-btn" id="generatePlanBtn">Me dire quoi faire maintenant</button>
+                <button class="secondary-btn" id="resetCoachBtn">Réinitialiser</button>
+              </div>
+            </div>
+
+            <div id="coachOutput">
+              <div class="method-card">
+                <h3>Méthode conseillée</h3>
+                <p class="muted">Choisis ton état réel pour afficher la méthode adaptée.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section class="section" id="matin">
           <div class="section-head">
             <div>
-              <h2>1. Checklist stricte du matin</h2>
-              <p>Le but n’est pas de penser. Le but est de choisir et verrouiller la journée.</p>
+              <h2>3. Checklist stricte du matin</h2>
+              <p>Durée maximale : 10 minutes. Le but n’est pas de penser plus. Le but est de réduire la charge cognitive et verrouiller la journée.</p>
             </div>
             <div class="badge">Tous les jours</div>
           </div>
+
           <div class="checklist">
-            <label class="check-item persist"><input type="checkbox" data-id="matin-ouvrir"><div class="check-text"><strong>Ouvrir seulement 3 choses</strong><span>Calendrier, Things 3, Rappels.</span></div></label>
-            <label class="check-item persist"><input type="checkbox" data-id="matin-highlight"><div class="check-text"><strong>Choisir 1 seule priorité du jour</strong><span>Une tâche utile et concrète.</span></div></label>
-            <label class="check-item persist"><input type="checkbox" data-id="matin-bloquer"><div class="check-text"><strong>Bloquer le créneau dans le calendrier</strong><span>Lui donner une vraie place.</span></div></label>
+            <label class="check-item persist"><input type="checkbox" data-id="matin-ouvrir"><div class="check-text"><strong>Ouvrir seulement 3 choses</strong><span>Calendrier, Things 3, Rappels. Rien d’autre au départ.</span></div></label>
+            <label class="check-item persist"><input type="checkbox" data-id="matin-videcerveau"><div class="check-text"><strong>Faire un vide-cerveau si ma tête est saturée</strong><span>2 à 15 minutes. J’évacue tout sans organiser.</span></div></label>
+            <label class="check-item persist"><input type="checkbox" data-id="matin-priorite"><div class="check-text"><strong>Choisir la priorité du jour à partir des 3 priorités hebdo</strong><span>Pas à partir de toutes mes envies.</span></div></label>
+            <label class="check-item persist"><input type="checkbox" data-id="matin-reduire"><div class="check-text"><strong>Réduire en action visible</strong><span>Verbe + objet + limite claire. Pas de tâche floue.</span></div></label>
+            <label class="check-item persist"><input type="checkbox" data-id="matin-methode"><div class="check-text"><strong>Choisir la méthode de démarrage</strong><span>2 min, B-Work, 1-3-5 ou tâche basse énergie.</span></div></label>
+            <label class="check-item persist"><input type="checkbox" data-id="matin-calendrier"><div class="check-text"><strong>Bloquer le créneau dans le calendrier</strong><span>10, 25 ou 45 minutes selon l’énergie réelle.</span></div></label>
+          </div>
+
+          <div class="grid-2 top-gap">
+            <div class="callout blue">
+              <div class="icon">🎯</div>
+              <div>
+                <strong>Question obligatoire</strong>
+                Si je ne fais qu’une seule chose aujourd’hui, laquelle fera vraiment avancer ma semaine ou réduira ma charge mentale ?
+              </div>
+            </div>
+            <div class="callout orange">
+              <div class="icon">⚙️</div>
+              <div>
+                <strong>Réflexe anti-perfectionnisme</strong>
+                Avant de démarrer, je décide explicitement : aujourd’hui je vise utile, pas parfait.
+              </div>
+            </div>
           </div>
         </section>
 
         <section class="section" id="execution">
           <div class="section-head">
             <div>
-              <h2>2. L'Exécution (Le "B-Work")</h2>
-              <p>L'excellence paralyse. Autorise-toi un travail imparfait pour vaincre la friction.</p>
+              <h2>4. Exécution : comment travailler sans repartir dans le flou</h2>
+              <p>Tu ne travailles pas “à l’inspiration”. Tu travailles avec un niveau de qualité décidé à l’avance et une session bornée.</p>
             </div>
             <div class="badge">Avant de commencer</div>
           </div>
-          <div class="checklist">
-            <label class="check-item persist"><input type="checkbox" data-id="exec-2min"><div class="check-text"><strong>Règle des 2 minutes</strong><span>Faire la toute première action pour amorcer le mouvement (ouvrir le fichier, taper 3 lignes).</span></div></label>
-            <label class="check-item persist"><input type="checkbox" data-id="exec-pomodoro"><div class="check-text"><strong>Minuteur de 25 minutes</strong><span>S'engager à produire un résultat moyen ("B-Work") avant la sonnerie.</span></div></label>
-            <label class="check-item persist"><input type="checkbox" data-id="exec-nocorrection"><div class="check-text"><strong>Interdiction de corriger</strong><span>Ne pas douter ou peaufiner pendant ces 25 minutes. On avance.</span></div></label>
+
+          <div class="grid-3">
+            <div class="method-card">
+              <h3>Règle des 2 minutes</h3>
+              <p>Quand tu bloques avant de commencer. Objectif : casser l’inertie, pas avancer beaucoup.</p>
+              <ul class="rule-list">
+                <li>Ouvrir le projet</li>
+                <li>Créer le document</li>
+                <li>Écrire le titre</li>
+                <li>Lister 3 sous-étapes</li>
+              </ul>
+            </div>
+            <div class="method-card">
+              <h3>B-Work sur 25 minutes</h3>
+              <p>Quand tu veux faire parfait. Objectif : produire une V1 utile et visible.</p>
+              <ul class="rule-list">
+                <li>Minuteur 25 min</li>
+                <li>Interdiction de peaufiner</li>
+                <li>Livrer une version imparfaite</li>
+                <li>Corriger plus tard seulement si nécessaire</li>
+              </ul>
+            </div>
+            <div class="method-card">
+              <h3>Règle 1-3-5</h3>
+              <p>Quand tu te disperses. Objectif : borner volontairement la charge du jour.</p>
+              <ul class="rule-list">
+                <li>1 tâche majeure</li>
+                <li>3 tâches moyennes</li>
+                <li>5 micro-tâches</li>
+                <li>Le reste part au backlog</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="grid-4 top-gap">
+            <div class="box">
+              <h3>Mon Highlight</h3>
+              <textarea data-text-id="jour-highlight" placeholder="La tâche majeure du jour"></textarea>
+            </div>
+            <div class="box">
+              <h3>3 tâches moyennes</h3>
+              <textarea data-text-id="jour-moyennes" placeholder="1. ...&#10;2. ...&#10;3. ..."></textarea>
+            </div>
+            <div class="box">
+              <h3>5 micro-tâches</h3>
+              <textarea data-text-id="jour-micros" placeholder="Petites actions rapides uniquement"></textarea>
+            </div>
+            <div class="box">
+              <h3>Qualité visée</h3>
+              <div class="score-grid" id="qualityGrid">
+                <button class="score-btn" data-quality="A-Work">A-Work</button>
+                <button class="score-btn" data-quality="B-Work">B-Work</button>
+                <button class="score-btn" data-quality="C-Work">C-Work</button>
+                <button class="score-btn" data-quality="Repos">Repos</button>
+              </div>
+              <p class="muted bottom-zero">B-Work doit rester ton standard par défaut.</p>
+            </div>
+          </div>
+
+          <div class="grid-3 top-gap">
+            <div class="box">
+              <h3>Énergie haute</h3>
+              <p>Code difficile, écriture, architecture, apprentissage profond, création.</p>
+            </div>
+            <div class="box">
+              <h3>Énergie moyenne</h3>
+              <p>Corrections, rangement utile, anglais guidé, mails ciblés, sous-tâches concrètes.</p>
+            </div>
+            <div class="box">
+              <h3>Énergie basse</h3>
+              <p>Classement, tri, suppression, lecture légère, tâches de maintenance, petites obligations.</p>
+            </div>
           </div>
         </section>
 
         <section class="section" id="soir">
           <div class="section-head">
             <div>
-              <h2>3. Checklist stricte du soir</h2>
-              <p>Fermer la journée proprement et préparer demain.</p>
+              <h2>5. Clôture du soir</h2>
+              <p>Durée maximale : 5 minutes. Le rôle de cette section est de fermer la journée et de mesurer le Gain par rapport au point de départ.</p>
             </div>
             <div class="badge">Tous les jours</div>
           </div>
+
           <div class="checklist">
-            <label class="check-item persist"><input type="checkbox" data-id="soir-braindump"><div class="check-text"><strong>Vide-Cerveau (2 minutes)</strong><span>Noter frénétiquement tout ce qui pollue l'esprit dans Notes Apple, sans trier.</span></div></label>
-            <label class="check-item persist"><input type="checkbox" data-id="soir-cocher"><div class="check-text"><strong>Cocher le réel accompli</strong><span>Seulement ce qui a été fait.</span></div></label>
+            <label class="check-item persist"><input type="checkbox" data-id="soir-cocher"><div class="check-text"><strong>Cocher le réel</strong><span>Pas ce que je voulais faire. Seulement ce qui a vraiment été fait.</span></div></label>
+            <label class="check-item persist"><input type="checkbox" data-id="soir-gain"><div class="check-text"><strong>Noter 3 Gains</strong><span>Comparer au début de semaine, pas à l’idéal futur.</span></div></label>
+            <label class="check-item persist"><input type="checkbox" data-id="soir-prochaine"><div class="check-text"><strong>Écrire la prochaine action visible</strong><span>Pour rendre le redémarrage de demain facile.</span></div></label>
           </div>
-          <div class="daily-eval" style="margin-top:14px;">
-            <div class="grid-2">
-              <div class="box">
-                <h3>Mes 3 gains du jour</h3>
-                <p class="muted" style="font-size: 0.85rem; margin-top: -5px;">Mesure par rapport au point de départ, jamais par rapport à l'idéal futur.</p>
-                <textarea data-text-id="gains-jour" placeholder="Exemple : j’ai fait 25 min d’anglais imparfait."></textarea>
-              </div>
-              <div class="box">
-                <h3>Prochaine action de demain</h3>
-                <textarea data-text-id="demain-action" placeholder="Exemple : fusionner 5 notes en double."></textarea>
-              </div>
+
+          <div class="grid-2 top-gap">
+            <div class="box">
+              <h3>Mes 3 Gains du jour</h3>
+              <p class="muted small-gap">Exemple : j’ai tenu 25 minutes, j’ai livré une V1 imparfaite, j’ai vidé 40 captures d’écran.</p>
+              <textarea data-text-id="gains-jour" placeholder="Mesure par rapport au point de départ, jamais par rapport à l’idéal futur"></textarea>
+            </div>
+            <div class="box">
+              <h3>Prochaine action de demain</h3>
+              <textarea data-text-id="demain-action" placeholder="Exemple : ouvrir le projet et corriger le menu principal"></textarea>
             </div>
           </div>
         </section>
@@ -141,31 +421,40 @@
         <section class="section" id="temps-libre">
           <div class="section-head">
             <div>
-              <h2>4. Le Temps Libre</h2>
-              <p>Pioche ici sans réfléchir pour éviter l'effet Zeigarnik (la culpabilité de l'oisiveté).</p>
+              <h2>6. Le temps libre</h2>
+              <p>Le guide insiste sur ce point : le temps libre ne doit pas devenir une zone de culpabilité. Il doit être soit régénérant, soit légèrement constructif, jamais flou.</p>
             </div>
-            <div class="badge">Week-end & Soirées</div>
+            <div class="badge">Week-end & soirées</div>
           </div>
+
           <div class="grid-2">
             <div class="callout blue">
               <div>
-                <strong>Tâches Énergisantes (Créativité & Apprentissage)</strong>
+                <strong>Tâches énergisantes</strong>
                 <ul class="rule-list">
-                  <li>Regarder une vidéo sur l'IA en anglais.</li>
-                  <li>Avancer sur le Raspberry Pi.</li>
-                  <li>Jouer au tennis ou travailler la souplesse.</li>
+                  <li>Regarder une vidéo sur l’IA en anglais</li>
+                  <li>Avancer sur une idée Vision Pro pendant 25 minutes</li>
+                  <li>Faire mobilité, tennis léger ou souplesse</li>
                 </ul>
               </div>
             </div>
             <div class="callout green">
               <div>
-                <strong>Tâches de Récupération (Repos du système)</strong>
+                <strong>Tâches de récupération</strong>
                 <ul class="rule-list">
-                  <li>Jouer à Zelda, Shenmue ou Mario Kart.</li>
-                  <li>Promener les chiens tranquillement.</li>
-                  <li>Cuisiner un bon plat avec le Thermomix.</li>
+                  <li>Jouer à Shenmue, Zelda ou Mario Kart</li>
+                  <li>Promener les chiens tranquillement</li>
+                  <li>Cuisiner quelque chose de bon sans pression</li>
                 </ul>
               </div>
+            </div>
+          </div>
+
+          <div class="callout purple top-gap">
+            <div class="icon">🧠</div>
+            <div>
+              <strong>Règle</strong>
+              Quand tu as du temps libre, tu ne décides pas depuis la culpabilité. Tu choisis soit une activité régénérante, soit une mini-session utile déjà prévue.
             </div>
           </div>
         </section>
@@ -173,22 +462,47 @@
         <section class="section" id="lundi">
           <div class="section-head">
             <div>
-              <h2>5. L'entretien du lundi</h2>
-              <p>Le seul moment où tu réfléchis à ta stratégie. Max 20 minutes.</p>
+              <h2>7. Le lundi : pilotage minimaliste</h2>
+              <p>20 minutes maximum. Le système n’est pas un maître perfectionniste. C’est un filet de sécurité. Le lundi tu pilotes, les autres jours tu exécutes.</p>
             </div>
             <div class="badge">Hebdomadaire</div>
           </div>
+
           <div class="checklist">
-            <label class="check-item persist"><input type="checkbox" data-id="lundi-trier"><div class="check-text"><strong>Trier le Vide-Cerveau</strong><span>Ranger les notes accumulées la semaine dans les bons outils.</span></div></label>
-            <label class="check-item persist"><input type="checkbox" data-id="lundi-3priorites"><div class="check-text"><strong>Choisir 3 priorités de semaine max</strong><span>Pas plus pour ne pas saturer.</span></div></label>
-            <label class="check-item persist"><input type="checkbox" data-id="lundi-sessions"><div class="check-text"><strong>Bloquer les sessions dans le calendrier</strong><span>Verrouiller le temps d'action.</span></div></label>
+            <label class="check-item persist"><input type="checkbox" data-id="lundi-vider"><div class="check-text"><strong>Vider les entrées</strong><span>Notes, Rappels, idées en vrac, tâches flottantes.</span></div></label>
+            <label class="check-item persist"><input type="checkbox" data-id="lundi-trier"><div class="check-text"><strong>Trier dans les bons outils</strong><span>Agenda, projets, tâches, routines, backlog.</span></div></label>
+            <label class="check-item persist"><input type="checkbox" data-id="lundi-3priorites"><div class="check-text"><strong>Choisir 3 priorités de semaine maximum</strong><span>Le reste est reporté sans culpabilité.</span></div></label>
+            <label class="check-item persist"><input type="checkbox" data-id="lundi-sessions"><div class="check-text"><strong>Bloquer les sessions réelles dans le calendrier</strong><span>Pas des intentions, des créneaux vrais.</span></div></label>
+            <label class="check-item persist"><input type="checkbox" data-id="lundi-couper"><div class="check-text"><strong>Accepter l’arbitrage</strong><span>Choisir une chose = renoncer temporairement à d’autres.</span></div></label>
           </div>
         </section>
 
+        <section class="section" id="guide7jours">
+          <div class="section-head">
+            <div>
+              <h2>8. Mise en place en 7 jours</h2>
+              <p>Tu n’essaies pas de devenir parfait dès maintenant. Tu installes progressivement le système décrit dans le guide stratégique.</p>
+            </div>
+            <div class="badge">Progressif</div>
+          </div>
+
+          <div class="grid-4">
+            <div class="box"><h3>Jour 1</h3><p>Grand déchargement cognitif. Tout sortir de la tête sans organiser.</p></div>
+            <div class="box"><h3>Jour 2</h3><p>Construire le premier 1-3-5 à partir du chaos du Jour 1.</p></div>
+            <div class="box"><h3>Jour 3</h3><p>Faire une session B-Work sur la tâche que tu évites le plus.</p></div>
+            <div class="box"><h3>Jour 4</h3><p>Créer tes 3 menus d’énergie : haute, moyenne, basse.</p></div>
+            <div class="box"><h3>Jour 5</h3><p>Mettre en place un vrai backlog “Un jour / Peut-être”.</p></div>
+            <div class="box"><h3>Jour 6</h3><p>Installer le rituel du Gain en fin de journée.</p></div>
+            <div class="box"><h3>Jour 7</h3><p>Faire ta première revue hebdomadaire minimaliste de 20 minutes.</p></div>
+            <div class="box"><h3>Ensuite</h3><p>Reprendre simplement le lendemain matin, même après un dérapage. La régularité imparfaite gagne.</p></div>
+          </div>
+        </section>
       </main>
     </div>
+
+    <p class="footer">Le but de ce système n’est pas la perfection organisationnelle. Le but est la reprise rapide, utile et durable.</p>
   </div>
-  
+
   <script src="script.js"></script>
 </body>
 </html>
