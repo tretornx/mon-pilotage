@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pilotage personnel strict — Seb</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="shell">
+    <section class="hero">
+      <div class="eyebrow">✅ Mode d’emploi strict</div>
+      <h1>Pilotage personnel carré : quoi faire chaque matin, chaque soir, chaque lundi</h1>
+      <p>
+        Cette page n’est pas là pour t’inspirer. Elle est là pour te dire exactement quoi faire,
+        quoi ne pas faire, dans quel outil ranger chaque chose, et comment évaluer si tu avances vraiment.
+      </p>
+      <div class="hero-grid">
+        <div class="quick-card">
+          <h3>La règle centrale</h3>
+          <p>Tu n’as pas le droit de laisser dans ta tête des montagnes floues comme “ranger mes mails” ou “m’organiser”.</p>
+          <div class="formula">Une tâche valide = verbe + objet précis + limite claire</div>
+          <div class="pill-row">
+            <span class="pill">Supprimer 100 newsletters</span>
+            <span class="pill">Fusionner 5 notes en double</span>
+            <span class="pill">Trier 50 captures d’écran</span>
+          </div>
+        </div>
+        <div class="quick-card">
+          <h3>Les 4 règles du système</h3>
+          <ul class="rule-list">
+            <li>1 seule vraie priorité par jour</li>
+            <li>3 priorités fortes max par semaine</li>
+            <li>5 grands axes actifs max</li>
+            <li>Le lundi on pilote, les autres jours on exécute</li>
+          </ul>
+        </div>
+      </div>
+      <div class="kpis">
+        <div class="kpi"><strong id="compteurCochees">0</strong><span>cases cochées</span></div>
+        <div class="kpi"><strong id="compteurTotal">0</strong><span>actions visibles</span></div>
+        <div class="kpi"><strong id="pourcentageProgression">0%</strong><span>progression</span></div>
+        <div class="kpi"><strong>10 min</strong><span>gestion journalière max</span></div>
+      </div>
+    </section>
+
+    <div class="topbar">
+      <div class="topbar-inner">
+        <nav class="nav">
+          <a href="#matin">Matin</a>
+          <a href="#execution">Exécution</a>
+          <a href="#soir">Soir</a>
+          <a href="#temps-libre">Temps Libre</a>
+          <a href="#lundi">Lundi</a>
+        </nav>
+        <div class="progress-side">
+          <div class="progress-label">Avancement coché</div>
+          <div class="progress-bar"><div class="progress-fill" id="barreRemplissage"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="sidebar-stack">
+          <div>
+            <h2>Procédure ultra courte</h2>
+            <p>Quand tu es perdu, tu ne réfléchis pas. Tu appliques ça.</p>
+          </div>
+          <div class="box">
+            <h3>Tous les matins</h3>
+            <div class="strict-list">
+              <div class="strict-line">1. Ouvrir Calendrier + Things 3 + Rappels</div>
+              <div class="strict-line">2. Voir le vrai temps disponible</div>
+              <div class="strict-line">3. Choisir 1 Highlight</div>
+              <div class="strict-line">4. Bloquer le créneau</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <main class="content">
+        
+        <section class="section" id="matin">
+          <div class="section-head">
+            <div>
+              <h2>1. Checklist stricte du matin</h2>
+              <p>Le but n’est pas de penser. Le but est de choisir et verrouiller la journée.</p>
+            </div>
+            <div class="badge">Tous les jours</div>
+          </div>
+          <div class="checklist">
+            <label class="check-item persist"><input type="checkbox" data-id="matin-ouvrir"><div class="check-text"><strong>Ouvrir seulement 3 choses</strong><span>Calendrier, Things 3, Rappels.</span></div></label>
+            <label class="check-item persist"><input type="checkbox" data-id="matin-highlight"><div class="check-text"><strong>Choisir 1 seule priorité du jour</strong><span>Une tâche utile et concrète.</span></div></label>
+            <label class="check-item persist"><input type="checkbox" data-id="matin-bloquer"><div class="check-text"><strong>Bloquer le créneau dans le calendrier</strong><span>Lui donner une vraie place.</span></div></label>
+          </div>
+        </section>
+
+        <section class="section" id="execution">
+          <div class="section-head">
+            <div>
+              <h2>2. L'Exécution (Le "B-Work")</h2>
+              <p>L'excellence paralyse. Autorise-toi un travail imparfait pour vaincre la friction.</p>
+            </div>
+            <div class="badge">Avant de commencer</div>
+          </div>
+          <div class="checklist">
+            <label class="check-item persist"><input type="checkbox" data-id="exec-2min"><div class="check-text"><strong>Règle des 2 minutes</strong><span>Faire la toute première action pour amorcer le mouvement (ouvrir le fichier, taper 3 lignes).</span></div></label>
+            <label class="check-item persist"><input type="checkbox" data-id="exec-pomodoro"><div class="check-text"><strong>Minuteur de 25 minutes</strong><span>S'engager à produire un résultat moyen ("B-Work") avant la sonnerie.</span></div></label>
+            <label class="check-item persist"><input type="checkbox" data-id="exec-nocorrection"><div class="check-text"><strong>Interdiction de corriger</strong><span>Ne pas douter ou peaufiner pendant ces 25 minutes. On avance.</span></div></label>
+          </div>
+        </section>
+
+        <section class="section" id="soir">
+          <div class="section-head">
+            <div>
+              <h2>3. Checklist stricte du soir</h2>
+              <p>Fermer la journée proprement et préparer demain.</p>
+            </div>
+            <div class="badge">Tous les jours</div>
+          </div>
+          <div class="checklist">
+            <label class="check-item persist"><input type="checkbox" data-id="soir-braindump"><div class="check-text"><strong>Vide-Cerveau (2 minutes)</strong><span>Noter frénétiquement tout ce qui pollue l'esprit dans Notes Apple, sans trier.</span></div></label>
+            <label class="check-item persist"><input type="checkbox" data-id="soir-cocher"><div class="check-text"><strong>Cocher le réel accompli</strong><span>Seulement ce qui a été fait.</span></div></label>
+          </div>
+          <div class="daily-eval" style="margin-top:14px;">
+            <div class="grid-2">
+              <div class="box">
+                <h3>Mes 3 gains du jour</h3>
+                <p class="muted" style="font-size: 0.85rem; margin-top: -5px;">Mesure par rapport au point de départ, jamais par rapport à l'idéal futur.</p>
+                <textarea data-text-id="gains-jour" placeholder="Exemple : j’ai fait 25 min d’anglais imparfait."></textarea>
+              </div>
+              <div class="box">
+                <h3>Prochaine action de demain</h3>
+                <textarea data-text-id="demain-action" placeholder="Exemple : fusionner 5 notes en double."></textarea>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="temps-libre">
+          <div class="section-head">
+            <div>
+              <h2>4. Le Temps Libre</h2>
+              <p>Pioche ici sans réfléchir pour éviter l'effet Zeigarnik (la culpabilité de l'oisiveté).</p>
+            </div>
+            <div class="badge">Week-end & Soirées</div>
+          </div>
+          <div class="grid-2">
+            <div class="callout blue">
+              <div>
+                <strong>Tâches Énergisantes (Créativité & Apprentissage)</strong>
+                <ul class="rule-list">
+                  <li>Regarder une vidéo sur l'IA en anglais.</li>
+                  <li>Avancer sur le Raspberry Pi.</li>
+                  <li>Jouer au tennis ou travailler la souplesse.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="callout green">
+              <div>
+                <strong>Tâches de Récupération (Repos du système)</strong>
+                <ul class="rule-list">
+                  <li>Jouer à Zelda, Shenmue ou Mario Kart.</li>
+                  <li>Promener les chiens tranquillement.</li>
+                  <li>Cuisiner un bon plat avec le Thermomix.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="lundi">
+          <div class="section-head">
+            <div>
+              <h2>5. L'entretien du lundi</h2>
+              <p>Le seul moment où tu réfléchis à ta stratégie. Max 20 minutes.</p>
+            </div>
+            <div class="badge">Hebdomadaire</div>
+          </div>
+          <div class="checklist">
+            <label class="check-item persist"><input type="checkbox" data-id="lundi-trier"><div class="check-text"><strong>Trier le Vide-Cerveau</strong><span>Ranger les notes accumulées la semaine dans les bons outils.</span></div></label>
+            <label class="check-item persist"><input type="checkbox" data-id="lundi-3priorites"><div class="check-text"><strong>Choisir 3 priorités de semaine max</strong><span>Pas plus pour ne pas saturer.</span></div></label>
+            <label class="check-item persist"><input type="checkbox" data-id="lundi-sessions"><div class="check-text"><strong>Bloquer les sessions dans le calendrier</strong><span>Verrouiller le temps d'action.</span></div></label>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
