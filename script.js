@@ -1,91 +1,91 @@
-const CHECK_KEY = 'cap_simple_checks_v2';
-const TEXT_KEY = 'cap_simple_texts_v2';
-const COACH_KEY = 'cap_simple_coach_v2';
+const CHECK_KEY = 'cap_simple_pilotage_checks_v3';
+const TEXT_KEY = 'cap_simple_pilotage_texts_v3';
+const STATE_KEY = 'cap_simple_pilotage_state_v3';
 
 const coachData = {
   demarrage: {
     titre: 'Règle des 2 minutes',
-    quand: 'Quand la friction empêche même le démarrage',
-    duree: '2 min puis 10 min si l’élan arrive',
+    quand: 'Quand tu bloques avant même de commencer',
+    duree: '2 min puis 10 min si ça part',
     qualite: 'C-Work',
-    pourquoi: 'Tu ne cherches pas à finir. Tu cherches à casser l’inertie et à contourner l’évitement.',
+    pourquoi: 'Tu n’as pas besoin de finir. Tu as besoin de casser l’inertie.',
     etapes: [
-      'Réduis la tâche à une action réalisable en 120 secondes.',
-      'Ouvre seulement l’outil ou le projet concerné.',
-      'Écris la première sous-action visible.',
-      'Si le mouvement démarre, prolonge à 10 minutes. Sinon, arrête proprement.'
+      'Réduis la tâche à une action ridicule mais réelle.',
+      'Ouvre seulement l’outil concerné.',
+      'Fais la version 2 minutes prévue.',
+      'Si le mouvement part, prolonge un peu. Sinon, arrête proprement.'
     ],
-    phrase: 'Je n’ai pas besoin de finir. J’ai besoin d’amorcer le mouvement.'
+    phrase: 'Je n’ai pas besoin d’être prêt. J’ai besoin d’amorcer le mouvement.'
   },
   perfection: {
     titre: 'B-Work',
-    quand: 'Quand l’attente du résultat parfait te bloque',
+    quand: 'Quand tu veux faire parfait',
     duree: '25 min',
     qualite: 'B-Work',
-    pourquoi: 'Le standard “A” sur chaque action détruit la vitesse. Le standard “B” crée des versions réelles et améliorables.',
+    pourquoi: 'Le perfectionnisme transforme une tâche utile en montagne. B-Work remet du réel.',
     etapes: [
-      'Définis ce que “suffisamment bon” veut dire pour cette session.',
-      'Lance un minuteur de 25 minutes.',
-      'Interdis toute correction, tout peaufinage, tout doute pendant le chrono.',
-      'À la sonnerie, garde une V1 visible.'
+      'Décide explicitement que la séance vise une version utile, pas finale.',
+      'Lance un bloc borné.',
+      'Interdis le peaufinage pendant le chrono.',
+      'À la fin, garde une V1 visible.'
     ],
     phrase: 'Utile maintenant vaut mieux que parfait jamais.'
   },
   dispersion: {
     titre: 'Règle 1-3-5',
-    quand: 'Quand tout semble important en même temps',
+    quand: 'Quand tu veux tout faire',
     duree: '5 min',
     qualite: 'B-Work',
-    pourquoi: 'La surcharge décisionnelle te paralyse. Borner le nombre de tâches réduit l’angoisse et redonne de la traction.',
+    pourquoi: 'La surcharge décisionnelle te fait croire que tout est prioritaire. Borner redonne de la traction.',
     etapes: [
-      'Choisis 1 Highlight unique pour la journée.',
+      'Choisis 1 bloc principal du jour.',
       'Ajoute 3 tâches moyennes maximum.',
       'Ajoute 5 micro-tâches maximum.',
-      'Tout le reste part au backlog.'
+      'Le reste part au backlog.'
     ],
-    phrase: 'Tout faire aujourd’hui = ne presque rien finir.'
+    phrase: 'Tout faire aujourd’hui = se noyer.'
   },
   fatigue: {
-    titre: 'Tâche compatible avec ton énergie',
-    quand: 'Quand l’énergie est basse ou moyenne',
+    titre: 'Bloc d’énergie adapté',
+    quand: 'Quand tu es fatigué',
     duree: '10 à 25 min',
     qualite: 'C-Work ou B-Work',
-    pourquoi: 'Tu n’as pas besoin d’un meilleur moral. Tu as besoin d’une action adaptée à ton état réel.',
+    pourquoi: 'Tu n’as pas besoin d’un meilleur état émotionnel. Tu as besoin d’une tâche compatible avec ton énergie.',
     etapes: [
-      'Énergie basse : tri, classement, suppression, maintenance utile.',
-      'Énergie moyenne : correction, rangement ciblé, sous-tâches concrètes.',
-      'Énergie haute : création, code difficile, apprentissage profond.',
-      'Ne force jamais une tâche A dans un état C.'
+      'Si énergie basse : tri, entretien, administratif simple.',
+      'Si énergie moyenne : sous-tâches concrètes, corrections, rangement utile.',
+      'Si énergie haute : création et réflexion profonde.',
+      'Ne force pas une tâche de niveau A dans un état C.'
     ],
-    phrase: 'Je choisis une tâche à ma portée, pas à la hauteur de mon idéal.'
+    phrase: 'Je choisis une tâche à ma portée réelle.'
   },
   culpabilite: {
     titre: 'Le Gain',
-    quand: 'Quand tu te sens en retard ou “pas assez”',
+    quand: 'Quand tu te sens en retard',
     duree: '3 à 5 min',
     qualite: 'Réflexion guidée',
-    pourquoi: 'Comparer à l’idéal t’épuise. Comparer au point de départ te remet en mouvement.',
+    pourquoi: 'Te comparer à l’idéal t’écrase. Te comparer au point de départ te remet en mouvement.',
     etapes: [
       'Écris 3 progrès depuis le début de semaine.',
-      'Note ce qui est devenu plus clair, plus simple ou plus concret.',
-      'Choisis une mini-action qui confirme cette dynamique.',
-      'Ignore volontairement ton idéal futur pendant cette séquence.'
+      'Note ce qui est plus clair ou plus simple qu’avant.',
+      'Choisis une mini-action qui confirme cette progression.',
+      'Ignore ton idéal futur pendant cette séquence.'
     ],
-    phrase: 'Je me compare à mon point de départ, jamais à un fantasme parfait.'
+    phrase: 'Je me compare à mon point de départ, pas à un fantasme.'
   },
   tempslibre: {
     titre: 'Menu pré-approuvé',
-    quand: 'Quand tu as du temps libre mais pas de direction claire',
+    quand: 'Quand tu as du temps libre flou',
     duree: '10 à 45 min',
     qualite: 'Selon énergie',
-    pourquoi: 'Le temps libre flou appelle la distraction coupable. Un menu pré-choisi évite cette dérive.',
+    pourquoi: 'Le temps libre flou appelle la distraction coupable. Un menu déjà choisi t’évite ça.',
     etapes: [
-      'Choisis dans ton menu énergie haute, moyenne ou basse.',
-      'Prends une option déjà décidée, pas une nouvelle idée brillante.',
-      'Lance une session finie : 10, 25 ou 45 minutes.',
-      'À la fin, tu clôtures ou tu bascules vers une activité régénérante.'
+      'Choisis une option déjà prévue.',
+      'Décide si tu fais une mini-session utile ou une vraie récupération.',
+      'Lance un créneau borné.',
+      'Clôture proprement ensuite.'
     ],
-    phrase: 'Le temps libre utile commence par une option déjà choisie.'
+    phrase: 'Le temps libre utile commence par une décision simple.'
   }
 };
 
@@ -157,150 +157,63 @@ function initTextFields() {
       const next = readJson(TEXT_KEY);
       next[id] = field.value;
       writeJson(TEXT_KEY, next);
-      updatePriorityDecision();
       renderCoach();
     });
   });
 }
 
-function setActiveButton(groupSelector, dataName, value) {
-  document.querySelectorAll(groupSelector).forEach(btn => {
+function setActiveButton(selector, dataName, value) {
+  document.querySelectorAll(selector).forEach(btn => {
     btn.classList.toggle('active', btn.dataset[dataName] === value);
   });
 }
 
-function getTextValue(id) {
-  const field = document.querySelector(`[data-text-id="${id}"]`);
-  return field ? field.value.trim() : '';
+function getActiveValue(selector, dataName, fallbackValue) {
+  const active = document.querySelector(selector + '.active');
+  return active ? active.dataset[dataName] : fallbackValue;
 }
 
-function computeScores() {
-  const priorities = [
-    { key: 'priorite-1', titre: getTextValue('priorite-1') || 'Priorité 1 vide' },
-    { key: 'priorite-2', titre: getTextValue('priorite-2') || 'Priorité 2 vide' },
-    { key: 'priorite-3', titre: getTextValue('priorite-3') || 'Priorité 3 vide' }
-  ];
-
-  const selections = {
-    urgence: getTextValue('choix-urgence'),
-    importance: getTextValue('choix-importance'),
-    soulagement: getTextValue('choix-soulagement'),
-    levier: getTextValue('choix-levier')
-  };
-
-  priorities.forEach(item => {
-    let score = 0;
-    const raisons = [];
-
-    if (selections.urgence === item.key) {
-      score += 1;
-      raisons.push('urgence');
-    }
-
-    if (selections.importance === item.key) {
-      score += 2;
-      raisons.push('importance');
-    }
-
-    if (selections.soulagement === item.key) {
-      score += 1;
-      raisons.push('soulagement');
-    }
-
-    if (selections.levier === item.key) {
-      score += 2;
-      raisons.push('levier');
-    }
-
-    item.score = score;
-    item.raisons = raisons;
-  });
-
-  return priorities.sort((a, b) => b.score - a.score);
-}
-
-function updatePriorityDecision() {
-  const results = computeScores();
-  const container = document.getElementById('priorityResults');
-  const selectedCard = document.getElementById('selectedPriorityCard');
-
-  container.innerHTML = results.map((item, index) => {
-    const selectedClass = index === 0 && item.score > 0 ? 'selected' : '';
-    const raisons = item.raisons.length ? item.raisons.join(', ') : 'aucun critère choisi';
-
-    return `
-      <div class="priority-card ${selectedClass}">
-        <div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start;">
-          <strong>${item.titre}</strong>
-          <span class="priority-score">${item.score}</span>
-        </div>
-        <div class="priority-reason">Critères : ${raisons}</div>
-      </div>
-    `;
-  }).join('');
-
-  const top = results[0];
-
-  if (top && top.score > 0 && !top.titre.includes('vide')) {
-    selectedCard.innerHTML = `
-      <strong>Priorité du jour proposée</strong><br>
-      <small><strong>${top.titre}</strong><br>Elle ressort devant les autres avec un score de ${top.score}. Commence par elle aujourd’hui.</small>
-    `;
-  } else {
-    selectedCard.innerHTML = `
-      <strong>Priorité du jour</strong><br>
-      <small>Complète les critères pour obtenir une proposition claire.</small>
-    `;
-  }
-}
-
-function getSelectedTrigger() {
-  const active = document.querySelector('.trigger-btn.active');
-  return active ? active.dataset.trigger : null;
-}
-
-function getSelectedEnergy() {
-  const active = document.querySelector('.energy-btn.active');
-  return active ? active.dataset.energy : 'moyenne';
-}
-
-function getSelectedQuality() {
-  const active = document.querySelector('.score-btn.active');
-  return active ? active.dataset.quality : 'B-Work';
-}
-
-function buildCoachHtml(trigger, task, energy, quality) {
+function buildCoachHtml(trigger, energy, quality) {
   if (!trigger || !coachData[trigger]) {
     document.getElementById('sessionTarget').textContent = '25 min';
 
     return `
       <div class="method-card">
         <h3>Méthode conseillée</h3>
-        <p class="muted">Choisis ton état réel pour afficher la méthode adaptée.</p>
+        <p class="muted">Choisis ton état réel à gauche.</p>
       </div>
     `;
   }
 
   const fiche = coachData[trigger];
-  const tache = task && task.trim() ? task.trim() : 'ta priorité du jour';
+  const texte = readJson(TEXT_KEY);
+  const blocPrincipal = (texte['jour-bloc-principal'] || '').trim();
+  const actionVisible = (texte['jour-action-visible'] || '').trim();
+  const action2min = (texte['jour-action-2min'] || '').trim();
+  const frontPrincipal = (texte['jour-front-principal'] || '').trim();
+
+  let cible = actionVisible || blocPrincipal || frontPrincipal || 'ta priorité du moment';
   let premiereAction = '';
 
   if (trigger === 'demarrage') {
-    premiereAction = `Ouvre ${tache} et fais seulement la version 2 minutes prévue.`;
+    premiereAction = action2min || `Fais une version 2 minutes de : ${cible}.`;
   } else if (trigger === 'perfection') {
-    premiereAction = `Travaille 25 minutes sur ${tache} en visant explicitement ${quality === 'A-Work' ? 'B-Work' : quality}.`;
+    const qualiteAffichee = quality === 'A-Work' ? 'B-Work' : quality;
+    premiereAction = `Travaille sur "${cible}" en visant explicitement ${qualiteAffichee}.`;
   } else if (trigger === 'dispersion') {
-    premiereAction = `Décide si ${tache} est le Highlight du jour. Si non, renvoie-le au backlog.`;
+    premiereAction = `Reviens à un seul bloc principal aujourd’hui : "${cible}".`;
   } else if (trigger === 'fatigue') {
-    if (energy === 'haute') {
-      premiereAction = `Tu peux garder ${tache} tel quel, mais borne la session.`;
+    if (energy === 'basse') {
+      premiereAction = `Choisis une version basse énergie de "${cible}" ou bascule sur l’entretien minimum.`;
+    } else if (energy === 'moyenne') {
+      premiereAction = `Réduis "${cible}" en sous-tâche simple et bornée.`;
     } else {
-      premiereAction = `Réduis ${tache} en sous-tâche compatible avec une énergie ${energy}.`;
+      premiereAction = `Tu peux garder "${cible}" si tu le bornes clairement.`;
     }
   } else if (trigger === 'culpabilite') {
-    premiereAction = `Écris 3 Gains puis lance une mini-action de 10 minutes sur ${tache}.`;
+    premiereAction = `Écris 3 Gains puis fais une mini-action sur "${cible}".`;
   } else if (trigger === 'tempslibre') {
-    premiereAction = `Choisis une option déjà prévue liée à ${tache} ou bascule vers une vraie récupération.`;
+    premiereAction = `Décide si tu fais une mini-session utile liée à "${cible}" ou une vraie récupération.`;
   }
 
   document.getElementById('sessionTarget').textContent = fiche.duree;
@@ -308,67 +221,68 @@ function buildCoachHtml(trigger, task, energy, quality) {
   return `
     <div class="method-card">
       <h3>${fiche.titre}</h3>
-      <div class="method-meta">
-        <span class="chip">Quand : ${fiche.quand}</span>
-        <span class="chip">Durée : ${fiche.duree}</span>
-        <span class="chip">Qualité : ${fiche.qualite}</span>
-      </div>
+      <p><strong>Quand :</strong> ${fiche.quand}</p>
+      <p><strong>Durée :</strong> ${fiche.duree}</p>
+      <p><strong>Qualité :</strong> ${fiche.qualite}</p>
       <p>${fiche.pourquoi}</p>
     </div>
+
     <div class="status-card good">
-      <strong>Ta première action visible</strong><br>
+      <strong>Première action visible</strong><br />
       <small>${premiereAction}</small>
     </div>
+
     <div class="method-card">
       <h3>Comment l’appliquer maintenant</h3>
-      <ol class="rule-list">
+      <ol>
         ${fiche.etapes.map(item => `<li>${item}</li>`).join('')}
       </ol>
     </div>
+
     <div class="status-card warn">
-      <strong>Phrase anti-blocage</strong><br>
+      <strong>Phrase utile</strong><br />
       <small>${fiche.phrase}</small>
     </div>
   `;
 }
 
 function renderCoach() {
-  const savedText = readJson(TEXT_KEY);
-  const coachState = readJson(COACH_KEY);
-  const trigger = coachState.trigger || getSelectedTrigger();
-  const energy = coachState.energy || getSelectedEnergy();
-  const task = savedText['action-visible'] || savedText['jour-highlight'] || savedText['priorite-1'] || '';
-  const quality = coachState.quality || getSelectedQuality();
+  const state = readJson(STATE_KEY);
 
-  document.getElementById('coachOutput').innerHTML = buildCoachHtml(trigger, task, energy, quality);
+  const trigger = state.trigger || getActiveValue('.trigger-btn', 'trigger', null);
+  const energy = state.energy || getActiveValue('.energy-btn', 'energy', 'moyenne');
+  const quality = state.quality || getActiveValue('.quality-btn', 'quality', 'B-Work');
+
+  const output = document.getElementById('coachOutput');
+  output.innerHTML = buildCoachHtml(trigger, energy, quality);
 }
 
 function initCoach() {
-  const coachState = readJson(COACH_KEY);
+  const state = readJson(STATE_KEY);
 
-  if (coachState.trigger) {
-    setActiveButton('.trigger-btn', 'trigger', coachState.trigger);
+  if (state.trigger) {
+    setActiveButton('.trigger-btn', 'trigger', state.trigger);
   }
 
-  if (coachState.energy) {
-    setActiveButton('.energy-btn', 'energy', coachState.energy);
+  if (state.energy) {
+    setActiveButton('.energy-btn', 'energy', state.energy);
   } else {
     setActiveButton('.energy-btn', 'energy', 'moyenne');
   }
 
-  if (coachState.quality) {
-    setActiveButton('.score-btn', 'quality', coachState.quality);
+  if (state.quality) {
+    setActiveButton('.quality-btn', 'quality', state.quality);
   } else {
-    setActiveButton('.score-btn', 'quality', 'B-Work');
+    setActiveButton('.quality-btn', 'quality', 'B-Work');
   }
 
   document.querySelectorAll('.trigger-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       setActiveButton('.trigger-btn', 'trigger', btn.dataset.trigger);
 
-      const next = readJson(COACH_KEY);
+      const next = readJson(STATE_KEY);
       next.trigger = btn.dataset.trigger;
-      writeJson(COACH_KEY, next);
+      writeJson(STATE_KEY, next);
       renderCoach();
     });
   });
@@ -377,26 +291,26 @@ function initCoach() {
     btn.addEventListener('click', () => {
       setActiveButton('.energy-btn', 'energy', btn.dataset.energy);
 
-      const next = readJson(COACH_KEY);
+      const next = readJson(STATE_KEY);
       next.energy = btn.dataset.energy;
-      writeJson(COACH_KEY, next);
+      writeJson(STATE_KEY, next);
       renderCoach();
     });
   });
 
-  document.querySelectorAll('.score-btn').forEach(btn => {
+  document.querySelectorAll('.quality-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      setActiveButton('.score-btn', 'quality', btn.dataset.quality);
+      setActiveButton('.quality-btn', 'quality', btn.dataset.quality);
 
-      const next = readJson(COACH_KEY);
+      const next = readJson(STATE_KEY);
       next.quality = btn.dataset.quality;
-      writeJson(COACH_KEY, next);
+      writeJson(STATE_KEY, next);
       renderCoach();
     });
   });
 
   document.getElementById('generatePlanBtn').addEventListener('click', () => {
-    const trigger = getSelectedTrigger();
+    const trigger = getActiveValue('.trigger-btn', 'trigger', null);
 
     if (!trigger) {
       alert('Choisis d’abord ton état réel.');
@@ -407,12 +321,13 @@ function initCoach() {
   });
 
   document.getElementById('resetCoachBtn').addEventListener('click', () => {
-    writeJson(COACH_KEY, {});
-    document.querySelectorAll('.trigger-btn, .energy-btn, .score-btn').forEach(btn => {
+    writeJson(STATE_KEY, {});
+    document.querySelectorAll('.trigger-btn, .energy-btn, .quality-btn').forEach(btn => {
       btn.classList.remove('active');
     });
+
     setActiveButton('.energy-btn', 'energy', 'moyenne');
-    setActiveButton('.score-btn', 'quality', 'B-Work');
+    setActiveButton('.quality-btn', 'quality', 'B-Work');
     renderCoach();
   });
 
@@ -421,82 +336,4 @@ function initCoach() {
 
 initChecks();
 initTextFields();
-updatePriorityDecision();
 initCoach();
-    if (caseActuelle.checked === true) {
-      nombreCochees = nombreCochees + 1;
-      blocParent.classList.add('fait');
-    } else {
-      blocParent.classList.remove('fait');
-    }
-  });
-
-  // On calcule le pourcentage sans utiliser de syntaxe compliquée
-  let pourcentage = 0;
-  if (nombreTotal > 0) {
-    pourcentage = Math.round((nombreCochees / nombreTotal) * 100);
-  }
-
-  // On met à jour les textes et la barre de progression sur la page
-  document.getElementById('compteurCochees').textContent = nombreCochees;
-  document.getElementById('compteurTotal').textContent = nombreTotal;
-  document.getElementById('pourcentageProgression').textContent = pourcentage + '%';
-  document.getElementById('barreRemplissage').style.width = pourcentage + '%';
-}
-
-// Fonction pour initialiser les cases à cocher au chargement de la page
-function initialiserCasesACocher() {
-  let casesSauvegardees = lireDonneesSauvegardees(CLEF_SAUVEGARDE_CASES);
-  let toutesLesCases = document.querySelectorAll('.persist input[type="checkbox"]');
-
-  toutesLesCases.forEach(function(caseActuelle) {
-    let identifiantCase = caseActuelle.dataset.id;
-    
-    // On remet l'état sauvegardé (vrai ou faux)
-    if (casesSauvegardees[identifiantCase] === true) {
-      caseActuelle.checked = true;
-    } else {
-      caseActuelle.checked = false;
-    }
-
-    // On écoute quand tu cliques sur une case pour sauvegarder
-    caseActuelle.addEventListener('change', function() {
-      let nouvellesDonnees = lireDonneesSauvegardees(CLEF_SAUVEGARDE_CASES);
-      nouvellesDonnees[identifiantCase] = caseActuelle.checked;
-      sauvegarderDonnees(CLEF_SAUVEGARDE_CASES, nouvellesDonnees);
-      
-      mettreAJourStatistiques();
-    });
-  });
-
-  // On lance le calcul une première fois pour l'affichage
-  mettreAJourStatistiques();
-}
-
-// Fonction pour initialiser les zones de texte (tes gains et tes actions)
-function initialiserZonesDeTexte() {
-  let textesSauvegardes = lireDonneesSauvegardees(CLEF_SAUVEGARDE_TEXTES);
-  let tousLesChampsTexte = document.querySelectorAll('[data-text-id]');
-
-  tousLesChampsTexte.forEach(function(champActuel) {
-    let identifiantChamp = champActuel.dataset.textId;
-    
-    // On remet le texte que tu avais tapé
-    if (textesSauvegardes[identifiantChamp] !== undefined) {
-      champActuel.value = textesSauvegardes[identifiantChamp];
-    } else {
-      champActuel.value = '';
-    }
-
-    // On sauvegarde à chaque fois que tu tapes quelque chose
-    champActuel.addEventListener('input', function() {
-      let nouvellesDonnees = lireDonneesSauvegardees(CLEF_SAUVEGARDE_TEXTES);
-      nouvellesDonnees[identifiantChamp] = champActuel.value;
-      sauvegarderDonnees(CLEF_SAUVEGARDE_TEXTES, nouvellesDonnees);
-    });
-  });
-}
-
-// Lancement du système une fois que tout le code est lu
-initialiserCasesACocher();
-initialiserZonesDeTexte();
