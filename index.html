@@ -3,41 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cap Simple — Pilotage réel</title>
+  <title>Cap Simple — Exécution minimaliste durable</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="shell">
     <section class="hero">
-      <div class="eyebrow">🧭 Pilotage + discipline + productivité</div>
-      <h1>Cap Simple : arrêter d’avancer à tâtons</h1>
+      <div class="eyebrow">🧭 Version intégrée à partir de la recherche</div>
+      <h1>Cap Simple : pilotage réel, exécution minimale, progrès durable</h1>
       <p>
-        Cette page sert à arbitrer ta vie réelle, pas juste à cocher des cases.
-        Elle t’aide à distinguer ce qui est actif, ce qui est en entretien,
-        ce qui attend, et ce que tu dois faire aujourd’hui sans te disperser.
+        Cette application ne cherche pas à être impressionnante. Elle cherche à rester utilisable
+        même les jours de fatigue, de surcharge mentale ou de perfectionnisme.
+        Elle sépare le pilotage, l’exécution, la capture rapide et la fermeture du système.
       </p>
 
       <div class="hero-grid">
         <div class="card">
-          <h3>La règle centrale</h3>
-          <p>
-            Je ne peux pas faire progresser tous mes objectifs en même temps.
-            Je choisis volontairement <strong>2 fronts principaux maximum</strong> par semaine.
-          </p>
+          <h3>Architecture du système</h3>
+          <ul class="rule-list">
+            <li><strong>Zone d’exécution active</strong> : uniquement la liste du jour</li>
+            <li><strong>Référentiel stratégique</strong> : axes, projets actifs, domaines, ressources, archives</li>
+            <li><strong>Bac à sable</strong> : idées rapides à vider plus tard</li>
+          </ul>
           <div class="formula">
-            Axes de vie → objectifs actifs → priorités de semaine → plan du jour → méthode anti-blocage
+            Capture rapide → arbitrage hebdo → liste Ivy Lee du lendemain → exécution séquentielle → shutdown ritual
           </div>
         </div>
 
         <div class="card">
-          <h3>Les 6 règles du système</h3>
+          <h3>Règles fondatrices</h3>
           <ul class="rule-list">
-            <li>5 axes de vie maximum</li>
-            <li>1 objectif actif par axe</li>
-            <li>2 fronts principaux max par semaine</li>
-            <li>1 priorité principale par jour</li>
+            <li>Pas plus de 3 projets majeurs actifs</li>
+            <li>Pas plus de 6 tâches Ivy Lee demain</li>
+            <li>Eat the Frog : commencer par le plus important</li>
             <li>B-Work par défaut</li>
-            <li>Le reste va au backlog, pas dans ta tête</li>
+            <li>Les idées vont dans le bac à sable, pas dans la journée</li>
+            <li>Le soir, fermeture obligatoire</li>
           </ul>
         </div>
       </div>
@@ -46,7 +47,7 @@
         <div class="kpi"><strong id="doneCount">0</strong><span>cases cochées</span></div>
         <div class="kpi"><strong id="allCount">0</strong><span>actions visibles</span></div>
         <div class="kpi"><strong id="progressPct">0%</strong><span>progression</span></div>
-        <div class="kpi"><strong id="sessionTarget">25 min</strong><span>bloc conseillé</span></div>
+        <div class="kpi"><strong id="sessionTarget">15 min</strong><span>amorçage conseillé</span></div>
       </div>
     </section>
 
@@ -54,11 +55,12 @@
       <div class="topbar-inner">
         <nav class="nav">
           <a href="#axes">Axes</a>
-          <a href="#semaine">Semaine</a>
-          <a href="#jour">Aujourd’hui</a>
+          <a href="#projects">Projets actifs</a>
+          <a href="#today">Aujourd’hui</a>
           <a href="#coach">Blocage</a>
-          <a href="#discipline">Discipline</a>
-          <a href="#soir">Soir</a>
+          <a href="#sandbox">Bac à sable</a>
+          <a href="#shutdown">Fermeture</a>
+          <a href="#review">Revue</a>
         </nav>
 
         <div class="progress-side">
@@ -74,29 +76,30 @@
       <aside class="sidebar">
         <div class="sidebar-stack">
           <div>
-            <h2>Ordre de décision</h2>
-            <p>Quand tu es perdu, tu ne réfléchis pas dans tous les sens. Tu suis cet ordre.</p>
+            <h2>Ordre strict</h2>
+            <p>Quand tu es perdu, tu appliques cet ordre au lieu de réfléchir dans tous les sens.</p>
           </div>
 
           <div class="box">
-            <h3>Ordre strict</h3>
+            <h3>Pipeline</h3>
             <div class="stack">
-              <div class="chip">1. Regarder mes axes</div>
-              <div class="chip">2. Voir ce qui est actif / entretien / pause</div>
-              <div class="chip">3. Choisir les priorités de semaine</div>
-              <div class="chip">4. Décider le plan du jour</div>
-              <div class="chip">5. Lancer la bonne méthode</div>
+              <div class="chip">1. Regarder les axes et statuts</div>
+              <div class="chip">2. Limiter les projets actifs</div>
+              <div class="chip">3. Définir demain avec Ivy Lee</div>
+              <div class="chip">4. Exécuter séquentiellement</div>
+              <div class="chip">5. Fermer proprement le soir</div>
             </div>
           </div>
 
           <div class="box">
             <h3>Techniques à ne pas oublier</h3>
             <div class="stack">
-              <div class="chip">2 minutes = casser l’inertie</div>
-              <div class="chip">B-Work = standard normal</div>
-              <div class="chip">1-3-5 = borner la journée</div>
-              <div class="chip">Blocs d’énergie = adapter l’effort</div>
-              <div class="chip">Gain = mesurer le progrès réel</div>
+              <div class="chip">Brain dump</div>
+              <div class="chip">Ivy Lee</div>
+              <div class="chip">Eat the Frog</div>
+              <div class="chip">15 minutes</div>
+              <div class="chip">Do It Messy</div>
+              <div class="chip">Shutdown ritual</div>
             </div>
           </div>
 
@@ -104,7 +107,7 @@
             <div class="icon">⛔</div>
             <div>
               <strong>Interdiction</strong><br />
-              Choisir 8 priorités, tout mettre en phase active, refaire le système tous les 3 jours, ou confondre envie passagère et priorité stratégique.
+              Transformer l’app en usine à gaz, piloter les tâches depuis 12 listes, ou refaire le système au lieu d’exécuter.
             </div>
           </div>
         </div>
@@ -114,11 +117,8 @@
         <section class="section" id="axes">
           <div class="section-head">
             <div>
-              <h2>1. Mes axes de vie</h2>
-              <p>
-                Tu ne pars plus d’une immense liste de tâches. Tu pars de tes grands domaines de vie.
-                Chaque axe a un objectif actif et un statut.
-              </p>
+              <h2>1. Axes et statuts</h2>
+              <p>Tout n’a pas à accélérer en même temps. Chaque axe est soit actif, soit en entretien, soit en pause.</p>
             </div>
             <div class="badge">Pilotage haut niveau</div>
           </div>
@@ -189,47 +189,36 @@
             <div class="icon">📌</div>
             <div>
               <strong>Règle</strong><br />
-              Tout axe existe, mais tout axe n’est pas en phase d’accélération en même temps.
-              À un instant donné, 2 axes peuvent être vraiment actifs, 1 ou 2 en entretien, 1 en pause.
+              2 axes vraiment actifs maximum sur une période courte. Les autres restent vivants, mais en entretien ou en pause.
             </div>
           </div>
         </section>
 
-        <section class="section" id="semaine">
+        <section class="section" id="projects">
           <div class="section-head">
             <div>
-              <h2>2. Priorités de la semaine</h2>
-              <p>
-                Une semaine réussie n’est pas une semaine où tout avance.
-                C’est une semaine où les obligations sont tenues et où les vraies priorités progressent.
-              </p>
+              <h2>2. Référentiel stratégique minimal</h2>
+              <p>PARA allégé : seulement ce qui t’aide à ranger, pas à complexifier l’exécution.</p>
             </div>
-            <div class="badge">Arbitrage hebdo</div>
+            <div class="badge">Mémoire externe</div>
           </div>
 
-          <div class="grid-3">
+          <div class="grid-4">
             <div class="box">
-              <h3>Priorité pro n°1</h3>
-              <textarea data-text-id="semaine-pro" placeholder="Exemple : finaliser mon objectif principal du moment au travail"></textarea>
+              <h3>1_Projets_Actifs</h3>
+              <textarea data-text-id="para-projets" placeholder="2 ou 3 projets majeurs maximum"></textarea>
             </div>
             <div class="box">
-              <h3>Priorité perso n°1</h3>
-              <textarea data-text-id="semaine-perso" placeholder="Exemple : transformation physique ou santé"></textarea>
+              <h3>2_Domaines</h3>
+              <textarea data-text-id="para-domaines" placeholder="Santé, finances, administratif, maison..."></textarea>
             </div>
             <div class="box">
-              <h3>Priorité secondaire</h3>
-              <textarea data-text-id="semaine-secondaire" placeholder="Exemple : projet perso ou organisation"></textarea>
-            </div>
-          </div>
-
-          <div class="grid-2 top-gap">
-            <div class="box">
-              <h3>Ce que je n’essaie PAS de faire cette semaine</h3>
-              <textarea data-text-id="semaine-non" placeholder="Exemple : refaire tout mon système, lancer 3 nouveaux projets, ranger tout mon cloud"></textarea>
+              <h3>3_Ressources_Idées</h3>
+              <textarea data-text-id="para-ressources" placeholder="Curiosités, références, idées futures"></textarea>
             </div>
             <div class="box">
-              <h3>Backlog / plus tard</h3>
-              <textarea data-text-id="backlog" placeholder="Toutes les envies, idées, chantiers non actifs vont ici"></textarea>
+              <h3>4_Archives</h3>
+              <textarea data-text-id="para-archives" placeholder="Tout ce qui est fini, suspendu ou clos"></textarea>
             </div>
           </div>
 
@@ -237,84 +226,83 @@
             <div class="icon">⚖️</div>
             <div>
               <strong>Règle</strong><br />
-              Choisir une priorité, c’est renoncer temporairement à d’autres. Ce n’est pas les abandonner.
+              PARA sert à classer l’information. Pas à piloter ta journée. La journée se pilote ailleurs, avec très peu d’éléments.
             </div>
           </div>
         </section>
 
-        <section class="section" id="jour">
+        <section class="section" id="today">
           <div class="section-head">
             <div>
-              <h2>3. Aujourd’hui</h2>
-              <p>
-                Le jour ne sert pas à choisir toute ta vie.
-                Le jour sert à exécuter un morceau juste d’une priorité déjà choisie plus haut.
-              </p>
+              <h2>3. Zone d’exécution active</h2>
+              <p>Ici, il ne doit y avoir que demain et aujourd’hui. Rien d’autre. Pas de bruit, pas de backlog, pas de planning à 3 semaines.</p>
             </div>
-            <div class="badge">Exécution quotidienne</div>
+            <div class="badge">Ivy Lee + Eat the Frog</div>
           </div>
 
-          <div class="grid-2">
+          <div class="grid-3">
             <div class="box">
-              <h3>Front principal du jour</h3>
-              <textarea data-text-id="jour-front-principal" placeholder="Exemple : priorité pro ou perso principale du jour"></textarea>
+              <h3>Frog de demain</h3>
+              <textarea data-text-id="frog" placeholder="La tâche la plus importante / difficile à commencer en premier"></textarea>
             </div>
             <div class="box">
-              <h3>Pourquoi lui aujourd’hui ?</h3>
-              <textarea data-text-id="jour-pourquoi" placeholder="Exemple : échéance proche, effet de levier, gros soulagement mental"></textarea>
-            </div>
-          </div>
-
-          <div class="grid-4 top-gap">
-            <div class="box">
-              <h3>Bloc principal</h3>
-              <textarea data-text-id="jour-bloc-principal" placeholder="Exemple : corriger l’écran d’accueil"></textarea>
+              <h3>Version 15 minutes</h3>
+              <textarea data-text-id="frog-15" placeholder="Version amorçage si la tâche fait peur"></textarea>
             </div>
             <div class="box">
-              <h3>Bloc secondaire</h3>
-              <textarea data-text-id="jour-bloc-secondaire" placeholder="Exemple : 20 min d’anglais ou de rangement utile"></textarea>
-            </div>
-            <div class="box">
-              <h3>Entretien minimum</h3>
-              <textarea data-text-id="jour-entretien" placeholder="Exemple : répondre à 3 mails, administratif, tri simple"></textarea>
-            </div>
-            <div class="box">
-              <h3>Récupération</h3>
-              <textarea data-text-id="jour-recuperation" placeholder="Exemple : mobilité, jeu, promenade, repos assumé"></textarea>
+              <h3>Version Do It Messy</h3>
+              <textarea data-text-id="frog-messy" placeholder="Version volontairement imparfaite pour démarrer"></textarea>
             </div>
           </div>
 
-          <div class="grid-4 top-gap">
+          <div class="grid-2 top-gap">
             <div class="box">
-              <h3>Première action visible</h3>
-              <textarea data-text-id="jour-action-visible" placeholder="Exemple : ouvrir le projet et corriger le composant accueil"></textarea>
+              <h3>Liste Ivy Lee de demain</h3>
+              <div class="checklist">
+                <label class="check-item persist">
+                  <input type="checkbox" data-id="ivy-1">
+                  <div class="check-text"><strong>1. Tâche n°1</strong><textarea data-text-id="ivy-text-1" placeholder="La plus importante. À faire en premier."></textarea></div>
+                </label>
+                <label class="check-item persist">
+                  <input type="checkbox" data-id="ivy-2">
+                  <div class="check-text"><strong>2. Tâche n°2</strong><textarea data-text-id="ivy-text-2" placeholder="Seulement après la 1."></textarea></div>
+                </label>
+                <label class="check-item persist">
+                  <input type="checkbox" data-id="ivy-3">
+                  <div class="check-text"><strong>3. Tâche n°3</strong><textarea data-text-id="ivy-text-3" placeholder="La troisième importante."></textarea></div>
+                </label>
+                <label class="check-item persist">
+                  <input type="checkbox" data-id="ivy-4">
+                  <div class="check-text"><strong>4. Tâche n°4</strong><textarea data-text-id="ivy-text-4" placeholder="Optionnelle si la journée avance bien."></textarea></div>
+                </label>
+                <label class="check-item persist">
+                  <input type="checkbox" data-id="ivy-5">
+                  <div class="check-text"><strong>5. Tâche n°5</strong><textarea data-text-id="ivy-text-5" placeholder="Petite mais utile."></textarea></div>
+                </label>
+                <label class="check-item persist">
+                  <input type="checkbox" data-id="ivy-6">
+                  <div class="check-text"><strong>6. Tâche n°6</strong><textarea data-text-id="ivy-text-6" placeholder="Seulement si réaliste."></textarea></div>
+                </label>
+              </div>
             </div>
-            <div class="box">
-              <h3>Version 2 minutes</h3>
-              <textarea data-text-id="jour-action-2min" placeholder="Exemple : ouvrir le projet et écrire 3 sous-étapes"></textarea>
-            </div>
-            <div class="box">
-              <h3>3 tâches moyennes max</h3>
-              <textarea data-text-id="jour-moyennes" placeholder="1. ...&#10;2. ...&#10;3. ..."></textarea>
-            </div>
-            <div class="box">
-              <h3>5 micro-tâches max</h3>
-              <textarea data-text-id="jour-micros" placeholder="Petites actions rapides seulement"></textarea>
-            </div>
-          </div>
 
-          <div class="grid-3 top-gap">
             <div class="box">
-              <h3>Énergie haute</h3>
-              <p>Création, code difficile, architecture, réflexion profonde.</p>
-            </div>
-            <div class="box">
-              <h3>Énergie moyenne</h3>
-              <p>Correction, rangement utile, apprentissage guidé, tâches cadrées.</p>
-            </div>
-            <div class="box">
-              <h3>Énergie basse</h3>
-              <p>Tri, classement, suppression, administratif simple, entretien minimum.</p>
+              <h3>Règles d’exécution</h3>
+              <div class="stack">
+                <div class="chip">Je commence par 1</div>
+                <div class="chip">Je ne touche pas à 2 tant que 1 n’est pas finie ou bloquée extérieurement</div>
+                <div class="chip">Je n’ouvre pas mes idées pendant l’exécution</div>
+                <div class="chip">Si blocage : 15 min ou Do It Messy</div>
+                <div class="chip">Je peux réduire à 3 tâches les jours chargés</div>
+              </div>
+
+              <div class="callout green top-gap">
+                <div class="icon">✅</div>
+                <div>
+                  <strong>Rappel</strong><br />
+                  Une journée réussie n’est pas une journée où tout est fini. C’est une journée où le bon ordre a été respecté.
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -323,19 +311,16 @@
           <div class="section-head">
             <div>
               <h2>4. Coach anti-blocage</h2>
-              <p>
-                Ici tu choisis ton état réel. La page te rappelle la bonne méthode
-                et t’aide à ne pas oublier les techniques utiles.
-              </p>
+              <p>Tu choisis ton état réel. La page te redonne la bonne technique tactique sans réinventer le système.</p>
             </div>
-            <div class="badge">Productivité concrète</div>
+            <div class="badge">Techniques d’amorçage</div>
           </div>
 
           <div class="coach-grid">
             <div class="box">
-              <h3>Dans quel état suis-je ?</h3>
+              <h3>État réel maintenant</h3>
 
-              <div class="trigger-grid" id="triggerGrid">
+              <div class="trigger-grid">
                 <button class="trigger-btn" data-trigger="demarrage">Je bloque au démarrage</button>
                 <button class="trigger-btn" data-trigger="perfection">Je veux que ce soit parfait</button>
                 <button class="trigger-btn" data-trigger="dispersion">Je veux tout faire</button>
@@ -345,7 +330,7 @@
               </div>
 
               <div class="box top-gap">
-                <h3>Niveau d’énergie</h3>
+                <h3>Énergie</h3>
                 <div class="energy-grid">
                   <button class="energy-btn" data-energy="basse">Basse</button>
                   <button class="energy-btn" data-energy="moyenne">Moyenne</button>
@@ -354,7 +339,7 @@
               </div>
 
               <div class="box top-gap">
-                <h3>Qualité visée aujourd’hui</h3>
+                <h3>Qualité visée</h3>
                 <div class="quality-grid">
                   <button class="quality-btn" data-quality="A-Work">A-Work</button>
                   <button class="quality-btn active" data-quality="B-Work">B-Work</button>
@@ -377,115 +362,136 @@
           </div>
         </section>
 
-        <section class="section" id="discipline">
+        <section class="section" id="sandbox">
           <div class="section-head">
             <div>
-              <h2>5. Discipline minimale à respecter</h2>
-              <p>
-                La technique seule ne suffit pas. Tu dois aussi avoir des garde-fous
-                pour ne pas te raconter d’histoires.
-              </p>
+              <h2>5. Bac à sable quotidien</h2>
+              <p>Ici vont les idées parasites, obligations soudaines et pensées rapides. On les capture sans les traiter tout de suite.</p>
             </div>
-            <div class="badge">Règles fixes</div>
+            <div class="badge">Capture immédiate</div>
           </div>
 
-          <div class="checklist">
-            <label class="check-item persist">
-              <input type="checkbox" data-id="discipline-1">
-              <div class="check-text">
-                <strong>Je n’ai pas plus de 2 fronts principaux cette semaine</strong>
-                <span>Le reste est en entretien ou en pause.</span>
-              </div>
-            </label>
-
-            <label class="check-item persist">
-              <input type="checkbox" data-id="discipline-2">
-              <div class="check-text">
-                <strong>Je n’ai qu’une vraie priorité du jour</strong>
-                <span>Le reste est secondaire ou entretien.</span>
-              </div>
-            </label>
-
-            <label class="check-item persist">
-              <input type="checkbox" data-id="discipline-3">
-              <div class="check-text">
-                <strong>Je vise B-Work par défaut</strong>
-                <span>Je ne transforme pas tout en examen final.</span>
-              </div>
-            </label>
-
-            <label class="check-item persist">
-              <input type="checkbox" data-id="discipline-4">
-              <div class="check-text">
-                <strong>Je mets les nouvelles idées au backlog</strong>
-                <span>Je ne change pas de cap à chaque envie.</span>
-              </div>
-            </label>
-
-            <label class="check-item persist">
-              <input type="checkbox" data-id="discipline-5">
-              <div class="check-text">
-                <strong>Je choisis une récupération assumée si je suis vidé</strong>
-                <span>Je ne me punis pas avec de la fausse productivité.</span>
-              </div>
-            </label>
+          <div class="grid-2">
+            <div class="box">
+              <h3>Capture rapide</h3>
+              <textarea data-text-id="sandbox-capture" placeholder="Tout ce qui surgit pendant la journée va ici en vrac"></textarea>
+            </div>
+            <div class="box">
+              <h3>Traitement du soir</h3>
+              <textarea data-text-id="sandbox-traitement" placeholder="Le soir seulement : où ranger chaque élément ? PARA, Ivy Lee de demain, suppression, délégation..."></textarea>
+            </div>
           </div>
 
-          <div class="callout green top-gap">
-            <div class="icon">✅</div>
+          <div class="callout purple top-gap">
+            <div class="icon">🧠</div>
             <div>
-              <strong>Rappel</strong><br />
-              La discipline utile ne consiste pas à tout faire. Elle consiste à tenir le bon cadre assez longtemps.
+              <strong>Règle</strong><br />
+              Une idée apparue pendant une tâche n’a pas le droit de détourner ton exécution. Tu la captures en 3 secondes et tu reviens à ta tâche.
             </div>
           </div>
         </section>
 
-        <section class="section" id="soir">
+        <section class="section" id="shutdown">
           <div class="section-head">
             <div>
-              <h2>6. Clôture du soir</h2>
-              <p>
-                Tu ne termines pas la journée en te jugeant.
-                Tu regardes le réel, tu notes le Gain, tu facilites demain.
-              </p>
+              <h2>6. Shutdown ritual du soir</h2>
+              <p>La fermeture n’est pas un luxe. C’est une protection neurologique et psychologique contre l’épuisement.</p>
             </div>
-            <div class="badge">Fermeture</div>
+            <div class="badge">Fermeture vitale</div>
           </div>
 
           <div class="checklist">
             <label class="check-item persist">
-              <input type="checkbox" data-id="soir-1">
+              <input type="checkbox" data-id="shutdown-1">
               <div class="check-text">
-                <strong>J’ai regardé le réel</strong>
-                <span>Pas la journée idéale, la journée réellement vécue.</span>
+                <strong>J’ai vidé le bac à sable</strong>
+                <span>Les idées du jour ont été rangées, planifiées ou supprimées.</span>
               </div>
             </label>
 
             <label class="check-item persist">
-              <input type="checkbox" data-id="soir-2">
+              <input type="checkbox" data-id="shutdown-2">
               <div class="check-text">
-                <strong>J’ai noté 3 Gains</strong>
-                <span>Je mesure le progrès par rapport au point de départ.</span>
+                <strong>J’ai écrit la liste Ivy Lee de demain</strong>
+                <span>3 à 6 tâches maximum, dans l’ordre exact.</span>
               </div>
             </label>
 
             <label class="check-item persist">
-              <input type="checkbox" data-id="soir-3">
+              <input type="checkbox" data-id="shutdown-3">
               <div class="check-text">
-                <strong>J’ai préparé la prochaine action visible</strong>
-                <span>Demain doit redémarrer facilement.</span>
+                <strong>J’ai fermé physiquement le système</strong>
+                <span>Onglets, bureau, fichiers, espace de travail.</span>
+              </div>
+            </label>
+
+            <label class="check-item persist">
+              <input type="checkbox" data-id="shutdown-4">
+              <div class="check-text">
+                <strong>J’ai fait ma phrase de clôture</strong>
+                <span>Exemple : “Fermeture du système, terminé.”</span>
               </div>
             </label>
           </div>
 
           <div class="grid-2 top-gap">
             <div class="box">
-              <h3>Mes 3 Gains du jour</h3>
-              <textarea data-text-id="soir-gains" placeholder="Exemple : j’ai tenu mon cadre, j’ai avancé sur le bon front, je n’ai pas changé de système"></textarea>
+              <h3>Phrase de clôture</h3>
+              <textarea data-text-id="shutdown-phrase" placeholder="Exemple : fermeture du système, terminé"></textarea>
             </div>
             <div class="box">
-              <h3>Prochaine action visible</h3>
-              <textarea data-text-id="soir-prochaine-action" placeholder="Exemple : ouvrir IntelliJ et traiter le ticket X pendant 25 min"></textarea>
+              <h3>Gain du jour</h3>
+              <textarea data-text-id="shutdown-gains" placeholder="3 gains réels, même modestes"></textarea>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="review">
+          <div class="section-head">
+            <div>
+              <h2>7. Revue hebdo et réalignement mensuel</h2>
+              <p>Revue courte, sans usine à gaz. L’objectif est de synchroniser le système, pas de produire un audit de consultant.</p>
+            </div>
+            <div class="badge">Synchronisation</div>
+          </div>
+
+          <div class="grid-2">
+            <div class="box">
+              <h3>Revue hebdo</h3>
+              <div class="checklist">
+                <label class="check-item persist">
+                  <input type="checkbox" data-id="review-1">
+                  <div class="check-text"><strong>Get Clear</strong><span>Nettoyer l’entrée, OHIO, réduire le bruit.</span></div>
+                </label>
+                <label class="check-item persist">
+                  <input type="checkbox" data-id="review-2">
+                  <div class="check-text"><strong>Brain Dump</strong><span>Tout écrire sur feuille ou dans une note brute.</span></div>
+                </label>
+                <label class="check-item persist">
+                  <input type="checkbox" data-id="review-3">
+                  <div class="check-text"><strong>Get Current</strong><span>Regarder les 2 semaines à venir et les projets actifs.</span></div>
+                </label>
+                <label class="check-item persist">
+                  <input type="checkbox" data-id="review-4">
+                  <div class="check-text"><strong>Deep Work</strong><span>Bloquer 2 à 3 créneaux de fond si nécessaire.</span></div>
+                </label>
+              </div>
+            </div>
+
+            <div class="box">
+              <h3>Réalignement mensuel</h3>
+              <div class="stack">
+                <div class="chip">Célébrer les acquis avant les manques</div>
+                <div class="chip">Pas plus de 3 projets majeurs actifs</div>
+                <div class="chip">Basculer le reste en ressources ou archives</div>
+                <div class="chip">Évaluer sans honte les habitudes minimales</div>
+                <div class="chip">Ajuster le système au lieu de l’abandonner</div>
+              </div>
+
+              <div class="box top-gap">
+                <h3>Notes de réalignement</h3>
+                <textarea data-text-id="monthly-review" placeholder="Ce que je garde, ce que je coupe, ce que je mets en pause"></textarea>
+              </div>
             </div>
           </div>
         </section>
@@ -493,7 +499,7 @@
     </div>
 
     <p class="footer">
-      Le but n’est pas de tout pousser en même temps. Le but est de savoir quoi mérite ton énergie maintenant.
+      Le système doit survivre aux jours moyens. Sinon ce n’est pas un système durable.
     </p>
   </div>
 
