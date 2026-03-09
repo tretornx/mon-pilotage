@@ -7,40 +7,62 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-grid"></div>
+
   <div class="shell">
     <section class="hero">
-      <div class="eyebrow">🧭 Version intégrée à partir de la recherche</div>
-      <h1>Cap Simple : pilotage réel, exécution minimale, progrès durable</h1>
-      <p>
-        Cette application ne cherche pas à être impressionnante. Elle cherche à rester utilisable
-        même les jours de fatigue, de surcharge mentale ou de perfectionnisme.
-        Elle sépare le pilotage, l’exécution, la capture rapide et la fermeture du système.
-      </p>
+      <div class="eyebrow">Cap Simple • système utilisable les jours moyens</div>
+      <div class="hero-top">
+        <div class="hero-copy">
+          <h1>Pilotage réel, exécution minimale, progrès durable.</h1>
+          <p>
+            Cette application sert à arbitrer, exécuter et refermer proprement.
+            Elle limite le bruit, protège ton énergie et te rappelle les bonnes méthodes au bon moment.
+          </p>
+        </div>
+
+        <div class="hero-panel">
+          <div class="hero-panel-title">Principes non négociables</div>
+          <div class="hero-tags">
+            <span class="hero-tag">3 projets max</span>
+            <span class="hero-tag">Ivy Lee</span>
+            <span class="hero-tag">Frog</span>
+            <span class="hero-tag">B-Work</span>
+            <span class="hero-tag">Shutdown</span>
+          </div>
+        </div>
+      </div>
 
       <div class="hero-grid">
-        <div class="card">
-          <h3>Architecture du système</h3>
-          <ul class="rule-list">
-            <li><strong>Zone d’exécution active</strong> : uniquement la liste du jour</li>
-            <li><strong>Référentiel stratégique</strong> : axes, projets actifs, domaines, ressources, archives</li>
-            <li><strong>Bac à sable</strong> : idées rapides à vider plus tard</li>
-          </ul>
-          <div class="formula">
-            Capture rapide → arbitrage hebdo → liste Ivy Lee du lendemain → exécution séquentielle → shutdown ritual
+        <div class="card feature-card">
+          <div class="feature-icon">◎</div>
+          <div>
+            <h3>Zone d’exécution active</h3>
+            <p>Seulement la liste du jour, dans l’ordre. Rien d’autre.</p>
           </div>
         </div>
 
-        <div class="card">
-          <h3>Règles fondatrices</h3>
-          <ul class="rule-list">
-            <li>Pas plus de 3 projets majeurs actifs</li>
-            <li>Pas plus de 6 tâches Ivy Lee demain</li>
-            <li>Eat the Frog : commencer par le plus important</li>
-            <li>B-Work par défaut</li>
-            <li>Les idées vont dans le bac à sable, pas dans la journée</li>
-            <li>Le soir, fermeture obligatoire</li>
-          </ul>
+        <div class="card feature-card">
+          <div class="feature-icon">◌</div>
+          <div>
+            <h3>Référentiel stratégique</h3>
+            <p>Axes, projets actifs, ressources, archives. Pas la journée.</p>
+          </div>
         </div>
+
+        <div class="card feature-card">
+          <div class="feature-icon">△</div>
+          <div>
+            <h3>Bac à sable</h3>
+            <p>Les idées arrivent ici, pas dans ton exécution.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="formula">
+        Capture rapide → arbitrage hebdo → Ivy Lee → exécution séquentielle → fermeture du système
       </div>
 
       <div class="kpis">
@@ -55,17 +77,17 @@
       <div class="topbar-inner">
         <nav class="nav">
           <a href="#axes">Axes</a>
-          <a href="#projects">Projets actifs</a>
+          <a href="#projects">Projets</a>
           <a href="#today">Aujourd’hui</a>
           <a href="#techniques">Techniques</a>
           <a href="#coach">Blocage</a>
-          <a href="#sandbox">Bac à sable</a>
+          <a href="#sandbox">Capture</a>
           <a href="#shutdown">Fermeture</a>
           <a href="#review">Revue</a>
         </nav>
 
         <div class="progress-side">
-          <div class="progress-label">Avancement coché</div>
+          <div class="progress-label">Avancement</div>
           <div class="progress-bar">
             <div class="progress-fill" id="progressFill"></div>
           </div>
@@ -76,23 +98,23 @@
     <div class="layout">
       <aside class="sidebar">
         <div class="sidebar-stack">
-          <div>
+          <div class="side-title-block">
             <h2>Ordre strict</h2>
-            <p>Quand tu es perdu, tu appliques cet ordre au lieu de réfléchir dans tous les sens.</p>
+            <p>Quand tu es perdu, tu appliques cet ordre.</p>
           </div>
 
-          <div class="box">
+          <div class="box side-box">
             <h3>Pipeline</h3>
             <div class="stack">
-              <div class="chip">1. Regarder les axes et statuts</div>
+              <div class="chip">1. Regarder les axes</div>
               <div class="chip">2. Limiter les projets actifs</div>
-              <div class="chip">3. Définir demain avec Ivy Lee</div>
+              <div class="chip">3. Préparer demain</div>
               <div class="chip">4. Exécuter séquentiellement</div>
-              <div class="chip">5. Fermer proprement le soir</div>
+              <div class="chip">5. Fermer le système</div>
             </div>
           </div>
 
-          <div class="box">
+          <div class="box side-box">
             <h3>Techniques cliquables</h3>
             <div class="stack">
               <a class="chip chip-link" href="#tech-ivy-lee">Ivy Lee</a>
@@ -108,7 +130,7 @@
             <div class="icon">⛔</div>
             <div>
               <strong>Interdiction</strong><br />
-              Transformer l’app en usine à gaz, piloter les tâches depuis 12 listes, ou refaire le système au lieu d’exécuter.
+              Refaire le système, ajouter 12 listes, ou confondre organisation et évitement.
             </div>
           </div>
         </div>
@@ -118,10 +140,11 @@
         <section class="section" id="axes">
           <div class="section-head">
             <div>
+              <div class="section-kicker">Pilotage haut niveau</div>
               <h2>1. Axes et statuts</h2>
-              <p>Tout n’a pas à accélérer en même temps. Chaque axe est soit actif, soit en entretien, soit en pause.</p>
+              <p>Tout n’a pas à accélérer en même temps. Chaque axe est actif, en entretien ou en pause.</p>
             </div>
-            <div class="badge">Pilotage haut niveau</div>
+            <div class="badge">Vision</div>
           </div>
 
           <div class="grid-5">
@@ -185,23 +208,16 @@
               </select>
             </div>
           </div>
-
-          <div class="callout blue top-gap">
-            <div class="icon">📌</div>
-            <div>
-              <strong>Règle</strong><br />
-              2 axes vraiment actifs maximum sur une période courte. Les autres restent vivants, mais en entretien ou en pause.
-            </div>
-          </div>
         </section>
 
         <section class="section" id="projects">
           <div class="section-head">
             <div>
+              <div class="section-kicker">Mémoire externe</div>
               <h2>2. Référentiel stratégique minimal</h2>
-              <p>PARA allégé : seulement ce qui t’aide à ranger, pas à complexifier l’exécution.</p>
+              <p>PARA allégé : uniquement pour ranger l’information, jamais pour piloter ta journée.</p>
             </div>
-            <div class="badge">Mémoire externe</div>
+            <div class="badge">Structure</div>
           </div>
 
           <div class="grid-4">
@@ -222,23 +238,16 @@
               <textarea data-text-id="para-archives" placeholder="Tout ce qui est fini, suspendu ou clos"></textarea>
             </div>
           </div>
-
-          <div class="callout orange top-gap">
-            <div class="icon">⚖️</div>
-            <div>
-              <strong>Règle</strong><br />
-              PARA sert à classer l’information. Pas à piloter ta journée. La journée se pilote ailleurs, avec très peu d’éléments.
-            </div>
-          </div>
         </section>
 
         <section class="section" id="today">
           <div class="section-head">
             <div>
+              <div class="section-kicker">Ivy Lee + Eat the Frog</div>
               <h2>3. Zone d’exécution active</h2>
-              <p>Ici, il ne doit y avoir que demain et aujourd’hui. Rien d’autre. Pas de bruit, pas de backlog, pas de planning à 3 semaines.</p>
+              <p>Ici, il ne doit y avoir que demain et aujourd’hui. Rien d’autre.</p>
             </div>
-            <div class="badge">Ivy Lee + Eat the Frog</div>
+            <div class="badge">Exécution</div>
           </div>
 
           <div class="grid-3">
@@ -291,18 +300,10 @@
               <h3>Règles d’exécution</h3>
               <div class="stack">
                 <div class="chip">Je commence par 1</div>
-                <div class="chip">Je ne touche pas à 2 tant que 1 n’est pas finie ou bloquée extérieurement</div>
+                <div class="chip">Je ne touche pas à 2 tant que 1 n’est pas finie</div>
                 <div class="chip">Je n’ouvre pas mes idées pendant l’exécution</div>
                 <div class="chip">Si blocage : 15 min ou Do It Messy</div>
                 <div class="chip">Je peux réduire à 3 tâches les jours chargés</div>
-              </div>
-
-              <div class="callout green top-gap">
-                <div class="icon">✅</div>
-                <div>
-                  <strong>Rappel</strong><br />
-                  Une journée réussie n’est pas une journée où tout est fini. C’est une journée où le bon ordre a été respecté.
-                </div>
               </div>
             </div>
           </div>
@@ -311,123 +312,91 @@
         <section class="section" id="techniques">
           <div class="section-head">
             <div>
-              <h2>4. Techniques cliquables : définition + application</h2>
-              <p>Tu peux ouvrir chaque technique pour voir à quoi elle sert, quand l’utiliser et comment l’appliquer concrètement.</p>
+              <div class="section-kicker">Mode d’emploi</div>
+              <h2>4. Techniques cliquables</h2>
+              <p>Ouvre chaque technique pour voir à quoi elle sert et comment l’appliquer.</p>
             </div>
-            <div class="badge">Mode d’emploi</div>
+            <div class="badge">Guide</div>
           </div>
 
           <div class="accordion">
             <article class="accordion-item" id="tech-ivy-lee">
-              <button class="accordion-header" type="button">
-                <span>Ivy Lee</span>
-                <span class="accordion-icon">+</span>
-              </button>
+              <button class="accordion-header" type="button"><span>Ivy Lee</span><span class="accordion-icon">+</span></button>
               <div class="accordion-content">
-                <p><strong>Ce que c’est :</strong> une méthode ultra simple pour préparer demain avec une courte liste ordonnée.</p>
-                <p><strong>Quand l’utiliser :</strong> chaque soir, pour éviter de redécider toute ta journée le lendemain.</p>
-                <p><strong>Comment l’appliquer :</strong></p>
+                <p><strong>Ce que c’est :</strong> une méthode ultra simple pour préparer demain avec une liste ordonnée.</p>
+                <p><strong>Quand l’utiliser :</strong> chaque soir.</p>
                 <ol>
-                  <li>Écris de 3 à 6 tâches maximum pour demain.</li>
-                  <li>Classe-les dans l’ordre exact d’exécution.</li>
+                  <li>Écris de 3 à 6 tâches maximum.</li>
+                  <li>Classe-les dans l’ordre exact.</li>
                   <li>Le lendemain, tu commences par la 1.</li>
-                  <li>Tu ne passes à la suivante qu’après avoir fini ou bloqué extérieurement la précédente.</li>
+                  <li>Tu ne passes pas à la suivante trop tôt.</li>
                 </ol>
-                <p><strong>Erreur à éviter :</strong> écrire 12 tâches ou changer l’ordre en permanence.</p>
               </div>
             </article>
 
             <article class="accordion-item" id="tech-frog">
-              <button class="accordion-header" type="button">
-                <span>Eat the Frog</span>
-                <span class="accordion-icon">+</span>
-              </button>
+              <button class="accordion-header" type="button"><span>Eat the Frog</span><span class="accordion-icon">+</span></button>
               <div class="accordion-content">
-                <p><strong>Ce que c’est :</strong> commencer par la tâche la plus importante ou la plus résistante mentalement.</p>
-                <p><strong>Quand l’utiliser :</strong> quand tu sais qu’une tâche va te hanter toute la journée si tu la repousses.</p>
-                <p><strong>Comment l’appliquer :</strong></p>
+                <p><strong>Ce que c’est :</strong> commencer par la tâche la plus importante ou la plus résistante.</p>
+                <p><strong>Quand l’utiliser :</strong> quand une tâche va te hanter si tu la repousses.</p>
                 <ol>
-                  <li>Choisis la tâche qui a le plus d’impact ou de résistance.</li>
-                  <li>Prépare sa version 15 minutes si elle fait peur.</li>
-                  <li>Commence la journée par elle avant de te disperser.</li>
-                  <li>Une fois lancée, le reste devient plus facile.</li>
+                  <li>Choisis la tâche à plus gros impact.</li>
+                  <li>Prépare sa version 15 minutes si besoin.</li>
+                  <li>Commence la journée par elle.</li>
                 </ol>
-                <p><strong>Erreur à éviter :</strong> appeler “frog” une petite tâche facile juste pour te rassurer.</p>
               </div>
             </article>
 
             <article class="accordion-item" id="tech-brain-dump">
-              <button class="accordion-header" type="button">
-                <span>Brain dump</span>
-                <span class="accordion-icon">+</span>
-              </button>
+              <button class="accordion-header" type="button"><span>Brain dump</span><span class="accordion-icon">+</span></button>
               <div class="accordion-content">
-                <p><strong>Ce que c’est :</strong> vider le contenu de ta tête sans organiser, pour baisser la pression cognitive.</p>
-                <p><strong>Quand l’utiliser :</strong> quand tu te sens saturé, dispersé ou incapable de savoir par où commencer.</p>
-                <p><strong>Comment l’appliquer :</strong></p>
+                <p><strong>Ce que c’est :</strong> vider la tête sans organiser.</p>
+                <p><strong>Quand l’utiliser :</strong> quand tu te sens saturé ou dispersé.</p>
                 <ol>
-                  <li>Prends une feuille ou une note brute.</li>
-                  <li>Écris tout ce qui tourne en boucle, sans trier.</li>
-                  <li>À la fin seulement, répartis : exécution, bac à sable, ressources, suppression.</li>
+                  <li>Écris tout ce qui tourne en boucle.</li>
+                  <li>Ne trie pas pendant l’écriture.</li>
+                  <li>Répartis ensuite seulement.</li>
                 </ol>
-                <p><strong>Erreur à éviter :</strong> transformer le brain dump en séance de planification compliquée.</p>
               </div>
             </article>
 
             <article class="accordion-item" id="tech-15min">
-              <button class="accordion-header" type="button">
-                <span>Règle des 15 minutes</span>
-                <span class="accordion-icon">+</span>
-              </button>
+              <button class="accordion-header" type="button"><span>Règle des 15 minutes</span><span class="accordion-icon">+</span></button>
               <div class="accordion-content">
-                <p><strong>Ce que c’est :</strong> un amorçage court quand la tâche fait peur ou que tu es bloqué.</p>
-                <p><strong>Quand l’utiliser :</strong> au moment exact où tu repousses le démarrage.</p>
-                <p><strong>Comment l’appliquer :</strong></p>
+                <p><strong>Ce que c’est :</strong> un amorçage court contre l’évitement.</p>
+                <p><strong>Quand l’utiliser :</strong> quand tu repousses le démarrage.</p>
                 <ol>
                   <li>Prends uniquement la tâche n°1.</li>
-                  <li>Lance 15 minutes, pas plus.</li>
-                  <li>Tu n’as pas le droit d’évaluer la séance pendant le chrono.</li>
-                  <li>À la fin, tu choisis : continuer ou arrêter proprement.</li>
+                  <li>Lance 15 minutes.</li>
+                  <li>Interdis-toi d’évaluer la séance pendant le chrono.</li>
                 </ol>
-                <p><strong>Erreur à éviter :</strong> croire que 15 minutes est ridicule. Le but est de casser l’évitement.</p>
               </div>
             </article>
 
             <article class="accordion-item" id="tech-messy">
-              <button class="accordion-header" type="button">
-                <span>Do It Messy</span>
-                <span class="accordion-icon">+</span>
-              </button>
+              <button class="accordion-header" type="button"><span>Do It Messy</span><span class="accordion-icon">+</span></button>
               <div class="accordion-content">
-                <p><strong>Ce que c’est :</strong> autoriser un brouillon volontairement imparfait pour neutraliser le perfectionnisme.</p>
-                <p><strong>Quand l’utiliser :</strong> quand tu attends la bonne forme, le bon moment ou la bonne version.</p>
-                <p><strong>Comment l’appliquer :</strong></p>
+                <p><strong>Ce que c’est :</strong> produire une version imparfaite mais réelle.</p>
+                <p><strong>Quand l’utiliser :</strong> quand tu attends la version parfaite.</p>
                 <ol>
-                  <li>Décide que la séance sert à produire un brouillon, pas une version finale.</li>
-                  <li>Écris, codes ou organises de façon imparfaite mais réelle.</li>
+                  <li>Décide que la séance sert à produire un brouillon.</li>
                   <li>Interdis le peaufinage pendant la première passe.</li>
-                  <li>Garde la trace du brouillon au lieu de tout effacer.</li>
+                  <li>Garde la trace du brouillon.</li>
                 </ol>
-                <p><strong>Erreur à éviter :</strong> faire un brouillon puis le jeter immédiatement parce qu’il n’est pas assez beau.</p>
               </div>
             </article>
 
             <article class="accordion-item" id="tech-shutdown">
-              <button class="accordion-header" type="button">
-                <span>Shutdown ritual</span>
-                <span class="accordion-icon">+</span>
-              </button>
+              <button class="accordion-header" type="button"><span>Shutdown ritual</span><span class="accordion-icon">+</span></button>
               <div class="accordion-content">
-                <p><strong>Ce que c’est :</strong> un rituel court de fermeture pour arrêter les boucles ouvertes et préparer demain.</p>
-                <p><strong>Quand l’utiliser :</strong> chaque soir, même quand la journée a été moyenne.</p>
-                <p><strong>Comment l’appliquer :</strong></p>
+                <p><strong>Ce que c’est :</strong> un rituel court de fermeture.</p>
+                <p><strong>Quand l’utiliser :</strong> chaque soir.</p>
                 <ol>
                   <li>Vide le bac à sable.</li>
                   <li>Prépare la liste Ivy Lee du lendemain.</li>
                   <li>Ferme l’espace de travail.</li>
                   <li>Dis ta phrase de clôture.</li>
                 </ol>
-                <p><strong>Erreur à éviter :</strong> croire que la fermeture est accessoire. Sans fermeture, le système reste ouvert dans ta tête.</p>
               </div>
             </article>
           </div>
@@ -436,10 +405,11 @@
         <section class="section" id="coach">
           <div class="section-head">
             <div>
+              <div class="section-kicker">Techniques d’amorçage</div>
               <h2>5. Coach anti-blocage</h2>
-              <p>Tu choisis ton état réel. La page te redonne la bonne technique tactique sans réinventer le système.</p>
+              <p>Choisis ton état réel. La page te redonne la bonne technique sans refaire tout le système.</p>
             </div>
-            <div class="badge">Techniques d’amorçage</div>
+            <div class="badge">Déblocage</div>
           </div>
 
           <div class="coach-grid">
@@ -491,10 +461,11 @@
         <section class="section" id="sandbox">
           <div class="section-head">
             <div>
+              <div class="section-kicker">Capture immédiate</div>
               <h2>6. Bac à sable quotidien</h2>
-              <p>Ici vont les idées parasites, obligations soudaines et pensées rapides. On les capture sans les traiter tout de suite.</p>
+              <p>Les idées parasites, obligations soudaines et pensées rapides vont ici.</p>
             </div>
-            <div class="badge">Capture immédiate</div>
+            <div class="badge">Capture</div>
           </div>
 
           <div class="grid-2">
@@ -504,15 +475,7 @@
             </div>
             <div class="box">
               <h3>Traitement du soir</h3>
-              <textarea data-text-id="sandbox-traitement" placeholder="Le soir seulement : où ranger chaque élément ? PARA, Ivy Lee de demain, suppression, délégation..."></textarea>
-            </div>
-          </div>
-
-          <div class="callout purple top-gap">
-            <div class="icon">🧠</div>
-            <div>
-              <strong>Règle</strong><br />
-              Une idée apparue pendant une tâche n’a pas le droit de détourner ton exécution. Tu la captures en 3 secondes et tu reviens à ta tâche.
+              <textarea data-text-id="sandbox-traitement" placeholder="Le soir seulement : où ranger chaque élément ?"></textarea>
             </div>
           </div>
         </section>
@@ -520,10 +483,11 @@
         <section class="section" id="shutdown">
           <div class="section-head">
             <div>
+              <div class="section-kicker">Fermeture vitale</div>
               <h2>7. Shutdown ritual du soir</h2>
-              <p>La fermeture n’est pas un luxe. C’est une protection neurologique et psychologique contre l’épuisement.</p>
+              <p>La fermeture n’est pas un luxe. C’est une protection contre les boucles ouvertes.</p>
             </div>
-            <div class="badge">Fermeture vitale</div>
+            <div class="badge">Soir</div>
           </div>
 
           <div class="checklist">
@@ -575,10 +539,11 @@
         <section class="section" id="review">
           <div class="section-head">
             <div>
+              <div class="section-kicker">Synchronisation</div>
               <h2>8. Revue hebdo et réalignement mensuel</h2>
-              <p>Revue courte, sans usine à gaz. L’objectif est de synchroniser le système, pas de produire un audit de consultant.</p>
+              <p>Revue courte, sans usine à gaz. L’objectif est de synchroniser le système.</p>
             </div>
-            <div class="badge">Synchronisation</div>
+            <div class="badge">Revue</div>
           </div>
 
           <div class="grid-2">
@@ -624,9 +589,7 @@
       </main>
     </div>
 
-    <p class="footer">
-      Le système doit survivre aux jours moyens. Sinon ce n’est pas un système durable.
-    </p>
+    <p class="footer">Le système doit survivre aux jours moyens. Sinon ce n’est pas un système durable.</p>
   </div>
 
   <script src="script.js"></script>
