@@ -1,4 +1,3 @@
-
 const CHECK_KEY = 'cap_simple_research_checks_v2';
 const TEXT_KEY = 'cap_simple_research_texts_v2';
 const STATE_KEY = 'cap_simple_research_state_v2';
@@ -323,17 +322,13 @@ function initAccordion() {
       document.querySelectorAll('.accordion-item').forEach(other => {
         other.classList.remove('open');
         const icon = other.querySelector('.accordion-icon');
-        if (icon) {
-          icon.textContent = '+';
-        }
+        if (icon) icon.textContent = '+';
       });
 
       if (!isOpen) {
         item.classList.add('open');
         const icon = item.querySelector('.accordion-icon');
-        if (icon) {
-          icon.textContent = '−';
-        }
+        if (icon) icon.textContent = '−';
       }
     });
   });
@@ -343,9 +338,7 @@ function initAccordion() {
     if (target) {
       target.classList.add('open');
       const icon = target.querySelector('.accordion-icon');
-      if (icon) {
-        icon.textContent = '−';
-      }
+      if (icon) icon.textContent = '−';
     }
   }
 }
